@@ -70,13 +70,13 @@
                                                                                        placeholder="Vui lòng nhập số điện thoại" name="phone" type="text"/>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label>Địa chỉ </label> <input class="form-control"
+                                                    <label>Địa chỉ: </label> <input class="form-control"
                                                                                    placeholder="Vui lòng nhập địa chỉ" name="address" type="text"/>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label>Vai trò</label>
+                                                    <label>Vai trò:</label>
                                                     <br>
-                                                    <input type="radio" id="active" name="type" value=1>
+                                                    &nbsp;&nbsp;<input type="radio" id="active" name="type" value=1>
                                                       <label for="active">Khách hàng</label><br>
                                                       <input type="radio" id="inactive" name="type" value=0>
                                                       <label for="inactive">Admin</label><br>
@@ -91,7 +91,7 @@
                                                       <label for="inactive">Vô hiệu</label><br>
                                                 </div>
                                                 <button type="submit" class="btn btn-default">Tạo</button>
-                                                <button type="reset" class="btn btn-primary">Huỷ bỏ</button>
+                                                <button type="reset" onclick="location.href='<c:url value="/admin/account/manage"/>'" class="btn btn-primary">Huỷ bỏ</button>
                                             </form>
                                         </div>
                                     </div>

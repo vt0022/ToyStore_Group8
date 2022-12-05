@@ -67,7 +67,7 @@
                         <div class="breadcrumb">
                             <ol>
                                 <li>
-                                    <a href="#">
+                                    <a href="<c:url value="/View/Customer/index.jsp"/>">
                                         <span>Trang chủ</span>
                                     </a>
                                 </li>

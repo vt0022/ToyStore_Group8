@@ -13,7 +13,6 @@ com\nhom8\controller\admin\ProductInsertServlet.class
 com\nhom8\controller\customer\LoginServlet.class
 com\nhom8\controller\customer\CartUpdateQuantityServlet.class
 com\nhom8\controller\admin\CategoryManagerServlet.class
-com\nhom8\controller\customer\HomeServlet.class
 com\nhom8\controller\customer\SearchServlet.class
 com\nhom8\controller\customer\OrderPlaceServlet.class
 com\nhom8\controller\customer\ChangePasswordServlet.class

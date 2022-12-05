@@ -49,7 +49,7 @@
                                     <p class="text-success text-center">${message}</p>
                                 <div class="panel-body">
                                     <div class="table-responsive">
-                                        <table class="table table-striped table-bordered table-hover"
+                                        <table class="table table-striped table-bordered table-hover text-center"
                                                id="dataTables-example">
                                             <thead>
                                                 <tr>

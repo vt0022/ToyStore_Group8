@@ -58,7 +58,7 @@
                                                           <label for="inactive">Vô hiệu</label><br>
                                                     </div>
                                                     <input type="submit" class="btn btn-default" value="Chỉnh sửa">
-                                                    <button type="reset" class="btn btn-primary">Huỷ bỏ</button>
+                                                    <button type="reset" onclick="location.href='<c:url value="/admin/category/manage"/>'" class="btn btn-primary">Huỷ bỏ</button>
                                                 </form>
                                             </div>
                                         </div>

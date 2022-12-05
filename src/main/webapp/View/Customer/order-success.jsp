@@ -72,6 +72,11 @@
                                 <br>
                                 <br>
                                 <br> 
+                                <a href="<c:url value="/View/Customer/index.jsp"/>" class="text-center no-gutters">
+                                    <button class="btn btn-primary" data-link-action="sign-in" type="submit">
+                                        Quay về trang chủ
+                                    </button>
+                                </a>
                                 <br>
                                 <br>
                                 <br> 

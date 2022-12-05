@@ -52,7 +52,9 @@ public class ChangePasswordServlet extends HttpServlet {
                 a.setPassword(newpassword);
                 dao.update(a);
                 session.setAttribute("account", a);
-                response.sendRedirect(request.getContextPath() + "/productlist");
+
+                request.setAttribute("message", "Thay đổi mật khẩu thành công!");
+                request.getRequestDispatcher("/View/Customer/user-account.jsp").forward(request, response);
             }
         } else {
             response.sendRedirect(request.getContextPath() + "/View/Customer/login.jsp");

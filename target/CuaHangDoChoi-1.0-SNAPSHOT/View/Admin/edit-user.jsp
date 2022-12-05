@@ -43,7 +43,7 @@
                                         <div class="col-md-6">
                                             <h3>Thông tin người dùng</h3>
 
-                                            <form role="form" action="<c:url value="/admin/account/update"/>"  method="post" enctype="multipart/form-data">
+                                            <form role="form" action="<c:url value="/admin/account/update"/>" method="post" enctype="multipart/form-data">
                                                 <input name="id" value="${thisaccount.id}" hidden="">                                
                                                 <div class="form-group">
                                                     <label>Họ và tên: </label> <input class="form-control"
@@ -66,7 +66,7 @@
                                                     <label>Ảnh: </label> <input type="file" name="image" accept="image/jpeg, image/png, image/jpg" />
                                                 </div>
                                                 <div class="form-group">
-                                                    <img class="img-fluid image-cover" src="<c:url value="${thisaccount.image}"/>" alt="img">
+                                                    <img class="img-fluid image-cover" src="<c:url value="${thisaccount.image}"/>" style="width: 200px; height: 200px" alt="img">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Điện thoại: </label> <input class="form-control"
@@ -74,28 +74,27 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Địa chỉ: </label> <input class="form-control"
-                                                                                   value="${thisaccount.address}" name="address" type="text"/>
+                                                                                    value="${thisaccount.address}" name="address" type="text"/>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Vai trò:</label>
-                                                    <div class="checkbox" required>
-                                                        <label> <input type="radio" value="0" name="type" ${thisaccount.type == 0 ? "checked" : ""}/>Admin
-                                                        </label>
-                                                        <br>
-                                                        <label> <input type="radio" value="1" name="type" ${thisaccount.type == 1 ? "checked" : ""}/>Khách hàng
-                                                        </label>
-                                                    </div>
+                                                    <br>
+                                                    &nbsp;&nbsp;<input type="radio" value="0" name="type" ${thisaccount.type == 0 ? "checked" : ""}/>
+                                                    <label for="active" style="font-weight: normal"> Admin</label>
+                                                    <br>
+                                                    &nbsp;&nbsp;<input type="radio" value="1" name="type" ${thisaccount.type == 1 ? "checked" : ""}/>
+                                                    <label for="inactive" style="font-weight: normal"> Khách hàng</label>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Trạng thái:</label> 
                                                     <br>
                                                       <input type="radio" id="active" name="status" value=1 ${thisaccount.status == 1 ? "checked" : ""}>
-                                                      <label for="active">Hoạt động</label><br>
+                                                      <label for="active" style="font-weight: normal">Hoạt động</label><br>
                                                       <input type="radio" id="inactive" name="status" value=0 ${thisaccount.status == 0 ? "checked" : ""}>
-                                                      <label for="inactive">Vô hiệu</label><br>
+                                                      <label for="inactive" style="font-weight: normal">Vô hiệu</label><br>
                                                 </div>
                                                 <button type="submit" class="btn btn-default">Chỉnh sửa</button>
-                                                <button type="reset" class="btn btn-primary">Huỷ bỏ</button>
+                                                <button type="reset" onclick="location.href = '<c:url value="/admin/account/manage"/>'" class="btn btn-primary">Huỷ bỏ</button>
                                             </form>
                                         </div>
                                     </div>

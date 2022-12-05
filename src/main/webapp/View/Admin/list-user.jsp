@@ -49,24 +49,24 @@
                                     <p class="text-success text-center">${message}</p>
                                     <div class="panel-body">
                                         <div class="table-responsive">
-                                            <a href="${pageContext.request.contextPath}/View/Admin/add-user.jsp">
+                                            <a href="<c:url value="/View/Admin/add-user.jsp"/>">
                                                 <button type="submit" style="margin-bottom: 15px">Thêm</button>
                                                 <br>
                                             </a>
-                                            <table class="table table-striped table-bordered table-hover"
+                                            <table class="table table-striped table-bordered table-hover text-center"
                                                    id="dataTables-example">
                                                 <thead>
                                                     <tr>
-                                                        <th>ID</th>
-                                                        <th>Họ và tên</th>
-                                                        <th>Ảnh</th>
-                                                        <th>Tên người dùng</th>
-                                                        <th>Mật khẩu</th>
-                                                        <th style="width: 30%">Email</th>
-                                                        <th>Số điện thoại</th>
-                                                        <th>Địa chỉ</th>
-                                                        <th>Loại</th>
-                                                        <th></th>
+                                                        <th class="text-center">ID</th>
+                                                        <th class="text-center">Họ và tên</th>
+                                                        <th class="text-center">Ảnh</th>
+                                                        <th class="text-center">Tên người dùng</th>
+                                                        <th class="text-center">Mật khẩu</th>
+                                                        <th class="text-center">Email</th>
+                                                        <th class="text-center">Số điện thoại</th>
+                                                        <th class="text-center">Địa chỉ</th>
+                                                        <th class="text-center">Loại</th>
+                                                        <th class="text-center"></th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>

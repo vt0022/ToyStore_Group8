@@ -42,7 +42,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <h3>Thông tin sản phẩm:</h3>
-                                                <form role="form" action="<c:url value="/admin/account/insert"/>" method="post" enctype="multipart/form-data">
+                                                <form role="form" action="<c:url value="/admin/product/insert"/>" method="post" enctype="multipart/form-data">
                                                     <div class="form-group">
                                                         <label>Tên sản phẩm: </label> 
                                                         <input class="form-control" placeholder="Nhập tên sản phẩm" name="name" required/>
@@ -87,7 +87,7 @@
                                                     </div>
                                                 </div>
                                                 <input type="submit" class="btn btn-default" value="Thêm">
-                                                <button type="reset" class="btn btn-primary">Huỷ bỏ</button>
+                                                <button type="reset" onclick="location.href='<c:url value="/admin/product/manage"/>'" class="btn btn-primary">Huỷ bỏ</button>
                                             </form>
                                         </div>
                                     </div>

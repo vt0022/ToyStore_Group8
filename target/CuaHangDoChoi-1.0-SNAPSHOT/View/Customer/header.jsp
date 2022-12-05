@@ -39,49 +39,6 @@
     <link rel="stylesheet" type="text/css" href="<c:url value="/View/Customer/styles/responsive.css"/>">
 
     <header style="background-color: white">
-        <!-- header left mobie -->
-        <div class="header-mobile d-md-none">
-            <div class="mobile hidden-md-up text-xs-center d-flex align-items-center justify-content-around">
-
-                <!-- menu left -->
-                <div id="mobile_mainmenu" class="item-mobile-top">
-                    <i class="fa fa-bars" aria-hidden="true"></i>
-                </div>
-
-                <!-- logo -->
-                <div class="mobile-logo">
-                    <a href="${pageContext.request.contextPath}/home">
-                        <img class="logo-mobile img-fluid" src="img/home/MyLogoMobile.png" alt="Thế giới đồ chơi">
-                    </a>
-                </div>
-
-                <!-- menu right -->
-                <div class="mobile-menutop" data-target="#mobile-pagemenu">
-                    <i class="zmdi zmdi-more"></i>
-                </div>
-            </div>
-
-            <!-- search -->
-            <div id="mobile_search" class="d-flex" style="margin-left: 20px">
-                <div id="mobile_search_content">
-                    <form method="get" action="search">
-                        <input type="text" name="s" value="" placeholder="Tìm kiếm">
-                        <button type="submit">
-                            <i class="fa fa-search"></i>
-                        </button>
-                    </form>
-                </div>
-                <div class="desktop_cart">
-                    <div class="blockcart block-cart cart-preview tiva-toggle">
-                        <div class="header-cart tiva-toggle-btn">
-                            <span class="cart-products-count">1</span>
-                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <!-- header desktop -->
         <div class="header-top d-xs-none " style="background-color: white">
             <div class="container">
@@ -104,20 +61,20 @@
                                     <a href="<c:url value="/View/Customer/index.jsp"/>" class="parent">Trang chủ</a>
                                 </li>
                                 <li >
-                                    <a href="${pageContext.request.contextPath}/productlist" class="parent">Sản phẩm</a>
+                                    <a href="<c:url value="/productlist"/>" class="parent">Sản phẩm</a>
                                 </li>
                                 <li>
-                                    <a href="${pageContext.request.contextPath}/View/Customer/contact.jsp" class="parent">Liên hệ</a>
+                                    <a href="<c:url value="/View/Customer/contact.jsp"/>" class="parent">Liên hệ</a>
                                 </li>
                                 <li>
                                     <a href="#" class="parent">Xem thêm</a>
                                     <div class="dropdown-menu" style="width: 100%; position: absolute; left: 0;">
                                         <ul>
                                             <li class = item>
-                                                <a href="/View/Customer/404-error.jsp" title = "404 Error">Lỗi 404</a>
+                                                <a href="<c:url value="/View/Customer/404-error.jsp"/>" title = "404 Error">Lỗi 404</a>
                                             </li>
                                             <li class = item>
-                                                <a href="${pageContext.request.contextPath}/View/Admin/login.jsp" title = "Administrator">Administrator</a>
+                                                <a href="<c:url value="/View/Admin/login.jsp"/>" title = "Administrator">Administrator</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -128,7 +85,7 @@
 
                     <!-- search and account -->
                     <div class="col-sm-5 col-md-5 d-flex align-items-center justify-content-end" id="search_widget">
-                        <form method="post" action="${pageContext.request.contextPath}/search">
+                        <form method="post" action="<c:url value="/search"/>" >
 
                             <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
                             <input type="text" name="s" value="" placeholder="Tìm kiếm" class="ui-autocomplete-input" autocomplete="off">
@@ -153,34 +110,34 @@
                             <div id="acount" class="collapse">
                                 <div class="account-list-content">
                                     <div>
-                                        <a class="login" href="${pageContext.request.contextPath}/View/Customer/user-account.jsp" rel="nofollow" title="Log in to your customer account">
+                                        <a class="login" href="<c:url value="/View/Customer/user-account.jsp"/>" rel="nofollow" title="Log in to your customer account">
                                             <i class="fa fa-cog"></i>
                                             <span>Tài khoản của tôi</span>
                                         </a>
                                     </div>
                                     <c:if test="${sessionScope.account == null}">
                                         <div>
-                                            <a class="login" href="${pageContext.request.contextPath}/View/Customer/user-login.jsp" rel="nofollow" title="Log in to your customer account">
+                                            <a class="login" href="<c:url value="/View/Customer/user-login.jsp"/>" rel="nofollow" title="Log in to your customer account">
                                                 <i class="fa fa-sign-in"></i>
                                                 <span>Đăng nhập</span>
                                             </a>
                                         </div>
                                         <div>
-                                            <a class="register" href="${pageContext.request.contextPath}/View/Customer/user-register.jsp" rel="nofollow" title="Register Account">
+                                            <a class="register" href="<c:url value="/View/Customer/user-register.jsp"/>" rel="nofollow" title="Register Account">
                                                 <i class="fa fa-user"></i>
                                                 <span>Đăng ký tài khoản</span>
                                             </a>
                                         </div>
                                     </c:if>
                                     <div>
-                                        <a class="check-out" href="${pageContext.request.contextPath}/placeorder" rel="nofollow" title="Checkout">
+                                        <a class="check-out" href="<c:url value="/placeorder"/>" rel="nofollow" title="Checkout">
                                             <i class="fa fa-check" aria-hidden="true"></i>
                                             <span>Thanh toán</span>
                                         </a>
                                     </div>
                                     <c:if test="${sessionScope.account != null}">
                                         <div>
-                                            <a class="login" href="${pageContext.request.contextPath}/logout" rel="nofollow" title="Đăng xuất">
+                                            <a class="login" href="<c:url value="/logout"/>" rel="nofollow" title="Đăng xuất">
                                                 <i class="fa fa-sign-in"></i>
                                                 <span>Đăng xuất</span>
                                             </a>
@@ -204,8 +161,8 @@
                                                 <tr>
                                                     <td colspan="3" class="d-flex justify-content-center">
                                                         <div class="cart-button">
-                                                            <a href="${pageContext.request.contextPath}/mycart" title="View Cart">Xem giỏ hàng</a>
-                                                            <a href="${pageContext.request.contextPath}/myorders" title="Checkout">Xem đơn hàng</a>
+                                                            <a href="<c:url value="/mycart"/>" title="View Cart">Xem giỏ hàng</a>
+                                                            <a href="<c:url value="/myorders"/>" title="Checkout">Xem đơn hàng</a>
                                                         </div>
                                                     </td>
                                                 </tr>

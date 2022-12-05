@@ -68,7 +68,7 @@
                         <div class="breadcrumb">
                             <ol>
                                 <li>
-                                    <a href="/home">
+                                    <a href="<c:url value="/View/Customer/index.jsp"/>">
                                         <span>Trang chủ</span>
                                     </a>
                                 </li>
@@ -90,12 +90,17 @@
                                 <div class="content" id="block-history">
                                     <table class="std table" style="width: 50%">
                                         <tbody>
-                                        <input name="id" value="${account.id}" hidden="">                                
+                                        <input name="id" value="${account.id}" hidden=""> 
+                                        <input name="type" value="${account.type}" hidden="">
+                                        <input name="status" value="${account.status}" hidden=""> 
+                                        <input name="password" value="${account.password}" hidden="">
                                         <tr>
                                             <th class="first_item">Ảnh đại diện: </th>
-                                            <td><img class="img-fluid image-cover" src="<c:url value="${account.image}"/>" alt="img">
+                                            <td>
+                                                <img class="img-fluid image-cover" style="width: 100px; height: 100px" src="<c:url value="${account.image}"/>" alt="img">
                                                 <input class="form-control"
-                                                       value="" name="image" type="file"/></td>
+                                                       value="" name="image" type="file"/>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <th class="first_item">Họ và tên: </th>

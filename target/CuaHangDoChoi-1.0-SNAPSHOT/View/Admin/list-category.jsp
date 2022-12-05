@@ -48,17 +48,17 @@
                                     <p class="text-success text-center">${message}</p>
                                     <div class="panel-body">
                                         <div class="table-responsive">
-                                            <form action="${pageContext.request.contextPath}/View/Admin/add-category.jsp" method="get">
+                                            <form action="<c:url value="/View/Admin/add-category.jsp"/>" method="get">
                                                 <button type="submit" style="margin-bottom: 15px">Thêm</button>
                                                 <br>
                                             </form>
-                                            <table class="table table-striped table-bordered table-hover"
+                                            <table class="table table-striped table-bordered table-hover text-center"
                                                    id="dataTables-example">
                                                 <thead>
                                                     <tr>
-                                                        <th>ID</th>
-                                                        <th>Tên</th>
-                                                        <th>Trạng thái</th>
+                                                        <th class="text-center">ID</th>
+                                                        <th class="text-center">Tên</th>
+                                                        <th class="text-center">Trạng thái</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>

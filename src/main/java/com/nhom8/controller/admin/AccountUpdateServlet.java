@@ -34,6 +34,8 @@ public class AccountUpdateServlet extends HttpServlet {
             int id = Integer.parseInt(request.getParameter("id"));
 
             Account a = dao.getAccountByID(id);
+            
+            session.setAttribute("updatedaccount", a);
 
             // Đặt dữ liệu cho JSP
             request.setAttribute("thisaccount", a);
@@ -57,15 +59,15 @@ public class AccountUpdateServlet extends HttpServlet {
         Account a = new Account();
 
         HttpSession session = request.getSession();
-        if (session != null && session.getAttribute("account") != null) {
+        if (session != null && session.getAttribute("adminAccount") != null) {
             try {
                 BeanUtils.populate(a, request.getParameterMap());
-
-                if (dao.checkExist(a.getUsername()) != null) {
+                
+                Account b = (Account) session.getAttribute("updatedaccount");
+                if (dao.checkExist(a.getUsername()) == null || //nhập username mới
+                        (dao.checkExist(a.getUsername()) != null && a.getUsername().equals(b.getUsername()))) { // giữ username cũ
                     a.setType(type);
 
-                    // Xử lý nếu ảnh không được up lên
-                    int flag = 0;
                     Map result = null;
                     Collection<Part> fileParts = request.getParts();
                     for (Part part : fileParts) {
@@ -89,7 +91,7 @@ public class AccountUpdateServlet extends HttpServlet {
                     request.getRequestDispatcher("/admin/account/manage").forward(request, response);
                 } else {
                     request.setAttribute("message", "Tên đăng nhập đã tồn tại!"); // Có thể thêm phần lưu lại thông tin
-                    request.getRequestDispatcher("/admin/account/update").forward(request, response);
+                    request.getRequestDispatcher("/admin/account/manage").forward(request, response);
                 }
             } catch (Exception e) {
             }

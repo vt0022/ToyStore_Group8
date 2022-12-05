@@ -39,7 +39,7 @@
                                     <div class="contact-us">
                                         <div class="title-content">
                                             <i class="fa fa-home" aria-hidden="true"></i>
-                                            <span>Address :</span>
+                                            <span>Địa chỉ :</span>
                                         </div>
                                         <div class="content-contact address-contact">
                                             <p>231, Kha Vạn Cân, Hiệp Bình Chánh, TP.Thủ Đức, TP.Hồ Chí Minh
@@ -78,26 +78,6 @@
                             </div>
                         </div>
                         <div class="tiva-modules col-lg-4 col-md-6">
-                            <div class="block m-top">
-                                <div class="block-content">
-                                    <div class="title-block">Tin tức</div>
-                                    <div class="sub-title">Đăng ký ngay để nhận thông tin và ưu đãi mới nhất gửi trực tiếp đến hòm thư của bạn
-                                    </div>
-                                    <div class="block-newsletter">
-                                        <form action="#" method="post">
-                                            <div class="input-group">
-                                                <input type="text" class="form-control" name="email" value="" placeholder="Enter Your Email">
-                                                <span class="input-group-btn">
-                                                    <button class="effect-btn btn btn-secondary " name="submitNewsletter" type="submit">
-                                                        <span>Đăng ký</span>
-                                                    </button>
-                                                </span>
-                                            </div>
-                                            <input type="hidden" name="action" value="0">
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="block m-top1">
                                 <div class="block-content">
                                     <div class="social-content">

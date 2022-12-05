@@ -49,22 +49,22 @@
                                     <p class="text-success text-center">${message}</p>
                                 <div class="panel-body">
                                     <div class="table-responsive">
-                                        <a href="${pageContext.request.contextPath}/admin/product/insert">
+                                        <a href="<c:url value="/admin/product/insert"/>">
                                             <button type="submit" style="margin-bottom: 15px">Thêm</button>
                                             <br>
                                         </a>
-                                        <table class="table table-striped table-bordered table-hover"
+                                        <table class="table table-striped table-bordered table-hover text-center"
                                                id="dataTables-example">
                                             <thead>
                                                 <tr>
-                                                    <th>ID</th>
-                                                    <th>Tên</th>
-                                                    <th>Ảnh</th>
-                                                    <th>Mô tả</th>
-                                                    <th>Giá (VNĐ)</th>
-                                                    <th>Số lượng</th>
-                                                    <th>Danh mục</th>
-                                                    <th>Tình trạng</th>
+                                                    <th class="text-center">ID</th>
+                                                    <th class="text-center">Tên</th>
+                                                    <th class="text-center">Ảnh</th>
+                                                    <th class="text-center">Mô tả</th>
+                                                    <th class="text-center">Giá (VNĐ)</th>
+                                                    <th class="text-center">Số lượng</th>
+                                                    <th class="text-center">Danh mục</th>
+                                                    <th class="text-center">Tình trạng</th>
                                                     <th></th>
                                                 </tr>
                                             </thead>

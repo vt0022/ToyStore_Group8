@@ -67,7 +67,7 @@ public class AccountInsertServlet extends HttpServlet {
                     dao.register(a);
                     
                     request.setAttribute("message", "Đã tạo tài khoản thành công!");
-                    request.getRequestDispatcher(request.getContextPath() + "/admin/account/manage").forward(request, response);
+                    request.getRequestDispatcher("/admin/account/manage").forward(request, response);
                 }
             } catch (Exception e) {
                 {

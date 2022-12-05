@@ -28,8 +28,7 @@
                     <div id="page-inner">
                         <div class="row">
                             <div class="col-md-12">
-                                <h2>Add Product</h2>
-                                <h5>Add product you can sell</h5>
+                                <h2>Chỉnh sửa sản phẩm</h2>
                             </div>
                         </div>
                         <!-- /. ROW  -->
@@ -38,12 +37,11 @@
                             <div class="col-md-12">
                                 <!-- Form Elements -->
                                 <div class="panel panel-default">
-                                    <div class="panel-heading">Add Product</div>
+                                    <div class="panel-heading">Thông tin sản phẩm</div>
                                     <div class="panel-body">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <h3>User:</h3>
-                                            <c:url value="/admin/product/update" var="edit"></c:url>
+                                                <h3>Sản phẩm</h3>
                                             <form role="form" action="<c:url value="/admin/product/update"/>" method="post" enctype="multipart/form-data">
                                                 <input name="id" value="${product.id}" hidden="">
                                                 <div class="form-group">
@@ -88,8 +86,11 @@
                                                     <label>Ảnh:</label> 
                                                     <input type="file" name="image" value="${product.image}" accept="image/jpeg, image/png, image/jpg"/>
                                                 </div>
+                                                <div class="form-group">
+                                                    <img class="img-fluid image-cover" src="<c:url value="${product.image}"/>" style="width: 200px; height: 200px" alt="img">
+                                                </div>
                                                 <button type="submit" class="btn btn-default">Chỉnh sửa</button>
-                                                <button type="reset" class="btn btn-primary">Huỷ bỏ</button>
+                                                <button type="reset" onclick="location.href='<c:url value="/admin/product/manage"/>'" class="btn btn-primary">Huỷ bỏ</button>
                                             </form>
 
 

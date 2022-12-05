@@ -72,7 +72,7 @@
                                     <div class="breadcrumb">
                                         <ol>
                                             <li>
-                                                <a href="/home">
+                                                <a href="<c:url value="/View/Customer/index.jsp"/>">
                                                     <span>Trang chủ</span>
                                                 </a>
                                             </li>

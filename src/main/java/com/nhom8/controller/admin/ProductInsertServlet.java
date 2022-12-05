@@ -60,9 +60,7 @@ public class ProductInsertServlet extends HttpServlet {
             int status = Integer.parseInt(request.getParameter("status"));
 
             Product product = new Product();
-            Category c = new Category();
-
-            c = dao2.getCategoryByID(catid);
+            Category c = dao2.getCategoryByID(catid);
 
             try {
                 BeanUtils.populate(product, request.getParameterMap());

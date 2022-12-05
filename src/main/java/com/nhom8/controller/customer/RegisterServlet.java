@@ -49,17 +49,17 @@ public class RegisterServlet extends HttpServlet {
         Account b = new Account();
         if (a != null) {
             request.setAttribute("message", "Tên đăng nhập đã tồn tại!");
-            request.getRequestDispatcher("/View/Customer/user-register.jsp").forward(request, response);
+            request.getRequestDispatcher(request.getContextPath() + "/View/Customer/user-register.jsp").forward(request, response);
         } else {
             try {
                 BeanUtils.populate(b, request.getParameterMap());
-                b.setId(3);
                 b.setType(1);
                 b.setStatus(1);
+                
                 dao.register(b);
 
                 request.setAttribute("message", "Đăng ký thành công! Vui lòng đăng nhập!");
-                request.getRequestDispatcher(request.getContextPath() + "/View/Customer/user-register.jsp").forward(request, response);
+                request.getRequestDispatcher(request.getContextPath() + "/View/Customer/user-login.jsp").forward(request, response);
                 //response.sendRedirect(request.getContextPath()+"/View/Customer/user-login.jsp");
             } catch (Exception e) {
             }

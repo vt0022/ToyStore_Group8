@@ -68,7 +68,7 @@
                         <div class="breadcrumb">
                             <ol>
                                 <li>
-                                    <a href="/home">
+                                    <a href="<c:url value="/View/Customer/index.jsp"/>">
                                         <span>Trang chủ</span>
                                     </a>
                                 </li>
@@ -92,7 +92,7 @@
                                     <tbody>
                                         <tr>
                                             <th class="first_item">Ảnh đại diện: </th>
-                                            <td><img class="img-fluid image-cover" src="${sessionScope.account.image}" alt="avatar"></td>
+                                            <td><img class="img-fluid image-cover" style="width: 200px; height: 200px" src="<c:url value="${sessionScope.account.image}"/>" alt="avatar"></td>
                                         </tr>
                                         <tr>
                                             <th class="first_item">Họ và tên: </th>
@@ -118,7 +118,7 @@
                                 </table>
 
                             </div>
-                            <a href="<c:url value="/updateaccount"/>">
+                            <a href="<c:url value="/updateaccount?id=${sessionScope.account.id}"/>">
                                 <button class="btn btn-primary" data-link-action="sign-in" type="">
                                     Cập nhật thông tin
                                 </button>

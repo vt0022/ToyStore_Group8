@@ -57,6 +57,7 @@ public class UpdateCustomerServlet extends HttpServlet {
 
         HttpSession session = request.getSession();
         if (session != null && session.getAttribute("account") != null) {
+            Account myaccount = (Account) session.getAttribute("account");
             try {
                 BeanUtils.populate(a, request.getParameterMap());
 
@@ -77,11 +78,11 @@ public class UpdateCustomerServlet extends HttpServlet {
 
                 dao.update(a);
                 
-                //session.setAttribute("account", a);
+                session.setAttribute("account", a);
 
-                //request.setAttribute("message", "Đã cập nhật tài khoản thành công!");
-                //request.getRequestDispatcher("/View/Customer/user-account.jsp").forward(request, response);
-                response.sendRedirect(request.getContextPath() + "/View/Customer/user-account.jsp");
+                request.setAttribute("message", "Đã cập nhật tài khoản thành công!");
+                request.getRequestDispatcher("/View/Customer/user-account.jsp").forward(request, response);
+                //response.sendRedirect(request.getContextPath() + "/View/Customer/user-account.jsp");
             } catch (Exception e) {
             }
         } else {
