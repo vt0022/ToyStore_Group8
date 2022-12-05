@@ -92,9 +92,7 @@
                                 <div id="content" class="page-content">
                                     <div class="register-form text-center">
                                         <h1 class="text-center title-page">Tạo tài khoản</h1>
-                                        <div class="alert alert-danger" role="alert">
-                                            ${message}
-                                        </div>
+                                        <p class="text-danger text-center">${message}</p>
                                         <form action="${pageContext.request.contextPath}/register" id="customer-form" class="js-customer-form" method="post">
                                             <div>
                                                 <div class="form-group">

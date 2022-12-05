@@ -29,7 +29,7 @@ public class CategoryServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
 
         // Đặt số sản phẩm trên một trang
-        int count = 1;
+        int count = 6;
 
         // Lấy chỉ mục trang
         String indexPage = request.getParameter("index");

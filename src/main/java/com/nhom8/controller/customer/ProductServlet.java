@@ -20,7 +20,7 @@ public class ProductServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         // Đặt số sản phẩm trên một trang
-        int count = 6;
+        int count = 9;
         // Lấy chỉ mục trang
         String indexPage = request.getParameter("index");
         // Khi mới mở chưa chọn index, đặt index mặc định

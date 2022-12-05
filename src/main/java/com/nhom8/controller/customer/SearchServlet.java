@@ -25,7 +25,7 @@ public class SearchServlet extends HttpServlet {
         String txtSearch = request.getParameter("s");
 
         // Đặt số sản phẩm trên một trang
-        int count = 6;
+        int count = 9;
         
         // Lấy chỉ mục trang
         String indexPage = request.getParameter("index");

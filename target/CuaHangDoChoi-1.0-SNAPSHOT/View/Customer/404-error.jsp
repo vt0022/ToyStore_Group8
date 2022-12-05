@@ -64,7 +64,7 @@
                             <div class="row center">
                                 <div class="content-404 col-lg-6 col-sm-6 text-center">
                                     <div class="image">
-                                        <img class="img-fluid" src="img/other/image-404.png" alt="Image 404">
+                                        <img class="img-fluid" src="<c:url value="/View/Customer/img/other/image-404.png"/>" alt="Image 404">
                                     </div>
                                     <h2 class="h4">Thực sự xin lỗi - Đã có một số vấn đề xảy ra bên phía chúng tôi.</h2>
                                     <div class="info">
@@ -77,7 +77,7 @@
                                 </div>
                                 <div class="content-right-404 col-lg-6 col-sm-6 text-center">
                                     <a href="#">
-                                        <img class="img-fluid" src="img/other/background.jpg" alt="image 404 right">
+                                        <img class="img-fluid" src="<c:url value="/View/Customer/img/other/background.jpg"/>" alt="image 404 right">
                                     </a>
                                 </div>
                             </div>

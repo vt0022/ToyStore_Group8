@@ -201,19 +201,19 @@
                                                 <ul>
                                                     <li>
                                                         <div class="block-reassurance-item">
-                                                            <img src="img/product/check1.png" alt="Security policy (edit with Customer reassurance module)">
+                                                            <img src="<c:url value="/View/Customer/img/product/check1.png"/>" alt="Security policy (edit with Customer reassurance module)">
                                                             <span>Chính sách bảo mật</span>
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <div class="block-reassurance-item">
-                                                            <img src="img/product/check2.png" alt="Delivery policy (edit with Customer reassurance module)">
+                                                            <img src="<c:url value="/View/Customer/img/product/check2.png"/>" alt="Delivery policy (edit with Customer reassurance module)">
                                                             <span>Chính sách vận chuyển</span>
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <div class="block-reassurance-item">
-                                                            <img src="img/product/check3.png" alt="Return policy (edit with Customer reassurance module)">
+                                                            <img src="<c:url value="/View/Customer/img/product/check3.png"/>" alt="Return policy (edit with Customer reassurance module)">
                                                             <span>Chính sách trả hàng</span>
                                                         </div>
                                                     </li>
