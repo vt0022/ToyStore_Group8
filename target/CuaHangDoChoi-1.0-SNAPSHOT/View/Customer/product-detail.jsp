@@ -112,7 +112,7 @@
                                                             <div class="images-container">
                                                                 <div class="js-qv-mask mask tab-content border">
                                                                     <div id="item1" class="tab-pane fade active in show">
-                                                                        <img src="<c:url value="/View/Customer/${detail.image}"/>" alt="img">
+                                                                        <img src="<c:url value="${detail.image}"/>" alt="img">
                                                                     </div>
                                                                     <div id="item2" class="tab-pane fade">
                                                                         <img src="${detail.image}" alt="img">

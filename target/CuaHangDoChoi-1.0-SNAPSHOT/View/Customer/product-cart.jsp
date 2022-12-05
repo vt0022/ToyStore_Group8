@@ -102,7 +102,7 @@
                                                                 <div class="product-line-grid-left col-md-2">
                                                                     <span class="product-image media-middle">
                                                                         <a href="product-detail.html">
-                                                                            <img class="img-fluid" src="<c:url value="/View/Customer/${ci.product.image}"/>" alt="Ảnh sản phẩm">
+                                                                            <img class="img-fluid" src="<c:url value="${ci.product.image}"/>" alt="Ảnh sản phẩm">
                                                                         </a>
                                                                     </span>
                                                                 </div>

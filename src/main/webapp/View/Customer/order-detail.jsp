@@ -112,7 +112,7 @@
                                                 <tr>
                                                     <th  class="text-center" scope="row">${oi.id}</th>
                                                     <td class="text-center">${oi.product.name}</td>
-                                                    <td class="text-center"><img height="100" width="100" src="<c:url value="/View/Customer/${oi.product.image}"/>"/></td>
+                                                    <td class="text-center"><img height="100" width="100" src="<c:url value="${oi.product.image}"/>"/></td>
                                                     <td class="text-center">${oi.price}</td>
                                                     <td class="text-center">${oi.amount}</td>
                                                 </tr>

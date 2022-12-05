@@ -131,22 +131,7 @@
                                                             </li>
                                                         </ul>
                                                         <div class="hidden-sm-down total-products">
-                                                            <p>Các sản phẩm của chúng tôi</p>
-                                                        </div>
-                                                    </div>
-                                                    <!--Sắp xếp-->
-                                                    <div class="col col-xs-12">
-                                                        <div class="d-flex sort-by-row justify-content-lg-end justify-content-md-end">
-
-                                                            <div class="products-sort-order dropdown">
-                                                                <select class="select-title">
-                                                                    <option value="">Sắp xếp theo</option>
-                                                                    <option value="">Tên, từ A đến Z</option>
-                                                                    <option value="">Tên, từ Z đến A</option>
-                                                                    <option value="">Giá tăng dần</option>
-                                                                    <option value="">Giá giảm dần</option>
-                                                                </select>
-                                                            </div>
+                                                            <p>Các sản phẩm trùng khớp</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -160,8 +145,8 @@
                                                                 <div class="product-miniature js-product-miniature item-one first-item">
                                                                     <div class="thumbnail-container border">
                                                                         <a href="productdetail?id=${pro.id}">
-                                                                            <img class="img-fluid image-cover" src="<c:url value="/View/Customer/${pro.image}"/>" alt="img">
-                                                                            <img class="img-fluid image-secondary" src="<c:url value="/View/Customer/${pro.image}"/>" alt="img">
+                                                                            <img class="img-fluid image-cover" src="<c:url value="${pro.image}"/>" alt="img">
+                                                                            <img class="img-fluid image-secondary" src="<c:url value="${pro.image}"/>" alt="img">
                                                                         </a>
                                                                     </div>
                                                                     <div class="product-description">

@@ -76,7 +76,7 @@
                                                         <td>${pro.price}</td>
                                                         <td>${pro.quantity}</td>                                                        
 
-                                                        <td><img height="50" width="50" src="<c:url value="/View/Customer/${pro.image}"/>"/></td>
+                                                        <td><img height="50" width="50" src="<c:url value="${pro.image}"/>"/></td>
                                                         
                                                         <td>${pro.category.getName()}</td>
 
