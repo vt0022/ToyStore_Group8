@@ -6,7 +6,7 @@
         <head>
             <meta charset="utf-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <title>Product Management</title>
+            <title>Quản lý sản phẩm</title>
             <!-- BOOTSTRAP STYLES-->
             <link href="${url}/css/bootstrap.css" rel="stylesheet" />
         <!-- FONTAWESOME STYLES-->
@@ -25,17 +25,16 @@
     <body>
         <div id="wrapper">
 
-            <jsp:include page="nav-bar.jsp"></jsp:include>
+            <jsp:include page="/View/Admin/nav-bar.jsp"></jsp:include>
 
                 <!-- /. NAV TOP  -->
-            <jsp:include page="slide-bar.jsp"></jsp:include>
+            <jsp:include page="/View/Admin/slide-bar.jsp"></jsp:include>
                 <!-- /. NAV SIDE  -->
                 <div id="page-wrapper">
                     <div id="page-inner">
                         <div class="row">
                             <div class="col-md-12">
-                                <h2>Tất cả sản phẩm</h2>
-                                <h5>Bạn có thể quản lý tất cả sản phẩm ở đây</h5>
+                                <h2>Danh sách sản phẩm</h2>
 
                             </div>
                         </div>
@@ -55,49 +54,47 @@
                                             <br>
                                         </a>
                                         <table class="table table-striped table-bordered table-hover"
-                                               id="dataTables-example" style="text-align: center; vertical-align: central">
+                                               id="dataTables-example">
                                             <thead>
                                                 <tr>
                                                     <th>ID</th>
                                                     <th>Tên</th>
-                                                    <!--<th>Mô tả</th>-->
-                                                    <th>Giá</th>
+                                                    <th>Ảnh</th>
+                                                    <th>Mô tả</th>
+                                                    <th>Giá (VNĐ)</th>
                                                     <th>Số lượng</th>
-                                                    <th class="text-center">Ảnh</th>
                                                     <th>Danh mục</th>
                                                     <th>Tình trạng</th>
+                                                    <th></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <c:forEach items="${productlist}" var="pro" >
+                                                <c:forEach items="${productlist}" var="pro">
                                                     <tr class="odd gradeX">
                                                         <td>${pro.id}</td>
                                                         <td>${pro.name}</td>
+                                                        <td><img height="50" width="50" src="<c:url value="${pro.image}"/>"></td>
+                                                        <td>${pro.description}</td>
                                                         <td>${pro.price}</td>
-                                                        <td>${pro.quantity}</td>                                                        
-
-                                                        <td><img height="50" width="50" src="<c:url value="${pro.image}"/>"/></td>
-                                                        
+                                                        <td>${pro.quantity}</td>
                                                         <td>${pro.category.getName()}</td>
-
-                                                        <c:if test="${pro.status == 1}">
-                                                            <td>Đang bán</td>
-                                                        </c:if>
-                                                        <c:if test="${pro.status == 0}">
-                                                            <td>Dừng bán</td>
-                                                        </c:if>
-                                                            
+                                                        <td class="center">
+                                                            <c:choose>
+                                                                <c:when test="${pro.status == 0}">
+                                                                    Ngừng bán
+                                                                </c:when>
+                                                                <c:otherwise>Đang bán</c:otherwise>
+                                                            </c:choose></td>
                                                         <td>
                                                             <a href="<c:url value="/admin/product/update?id=${pro.id}"/>"
-                                                               class="btn btn-warning" style="text-align: center; margin-bottom: 5px">Chỉnh sửa
-                                                            </a><br>
-                                                            <a
-                                                                href="<c:url value="/admin/product/delete?id=${pro.id}"/>"
-                                                                class="btn btn-danger">Xoá
-                                                            </a>
+                                                               class="btn btn-warning" style="text-align: center; margin-bottom: 5px">Chỉnh sửa</a>
+                                                            <br>
+                                                            <a href="<c:url value="/admin/product/delete?id=${pro.id}"/>"
+                                                               class="btn btn-danger">Xoá</a>
                                                         </td>
                                                     </tr>
                                                 </c:forEach>
+
                                             </tbody>
                                         </table>
                                     </div>
@@ -117,21 +114,21 @@
         <!-- /. WRAPPER  -->
         <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
         <!-- JQUERY SCRIPTS -->
-        <script src="js/jquery-1.10.2.js"></script>
+        <script src="${url}/js/jquery-1.10.2.js"></script>
         <!-- BOOTSTRAP SCRIPTS -->
-        <script src="js/bootstrap.min.js"></script>
+        <script src="${url}/js/bootstrap.min.js"></script>
         <!-- METISMENU SCRIPTS -->
-        <script src="js/jquery.metisMenu.js"></script>
+        <script src="${url}/js/jquery.metisMenu.js"></script>
         <!-- DATA TABLE SCRIPTS -->
-        <script src="js/dataTables/jquery.dataTables.js"></script>
-        <script src="js/dataTables/dataTables.bootstrap.js"></script>
+        <script src="${url}/js/dataTables/jquery.dataTables.js"></script>
+        <script src="${url}/js/dataTables/dataTables.bootstrap.js"></script>
         <script>
             $(document).ready(function () {
                 $('#dataTables-example').dataTable();
             });
         </script>
         <!-- CUSTOM SCRIPTS -->
-        <script src="js/custom.js"></script>
+        <script src="${url}/js/custom.js"></script>
 
     </body>
 </html>

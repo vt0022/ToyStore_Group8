@@ -7,7 +7,7 @@
         <head>
             <meta charset="utf-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <title>Edit User</title>
+            <title>Thêm người dùng</title>
             <!-- BOOTSTRAP STYLES-->
             <link href="css/bootstrap.css" rel="stylesheet" />
             <!-- FONTAWESOME STYLES-->
@@ -63,7 +63,7 @@
                                                                                  placeholder="Please enter email" name="email" type="email"/>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label>Ảnh: </label> <input type="file" name="image" />
+                                                    <label>Ảnh: </label> <input type="file" name="image" accept="image/jpeg, image/png, image/jpg"/>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Điện thoại: </label> <input class="form-control"
@@ -75,13 +75,12 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Vai trò</label>
-                                                    <div class="checkbox" required>
-                                                        <label> <input type="radio" value="0" name="type"/>Admin
-                                                        </label>
-                                                        <br>
-                                                        <label> <input type="radio" value="1" name="type" />Khách hàng
-                                                        </label>
-                                                    </div>
+                                                    <br>
+                                                    <input type="radio" id="active" name="type" value=1>
+                                                      <label for="active">Khách hàng</label><br>
+                                                      <input type="radio" id="inactive" name="type" value=0>
+                                                      <label for="inactive">Admin</label><br>
+
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Trạng thái:</label> 

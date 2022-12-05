@@ -49,10 +49,10 @@
                                     <p class="text-success text-center">${message}</p>
                                     <div class="panel-body">
                                         <div class="table-responsive">
-                                            <form action="${pageContext.request.contextPath}/View/Admin/add-user.jsp" method="get">
+                                            <a href="${pageContext.request.contextPath}/View/Admin/add-user.jsp">
                                                 <button type="submit" style="margin-bottom: 15px">Thêm</button>
                                                 <br>
-                                            </form>
+                                            </a>
                                             <table class="table table-striped table-bordered table-hover"
                                                    id="dataTables-example">
                                                 <thead>
@@ -62,7 +62,7 @@
                                                         <th>Ảnh</th>
                                                         <th>Tên người dùng</th>
                                                         <th>Mật khẩu</th>
-                                                        <th>Email</th>
+                                                        <th style="width: 30%">Email</th>
                                                         <th>Số điện thoại</th>
                                                         <th>Địa chỉ</th>
                                                         <th>Loại</th>
@@ -74,7 +74,7 @@
                                                     <tr class="odd gradeX">
                                                         <td>${acc.id}</td>
                                                         <td>${acc.name}</td>
-                                                        <td><img height="70" width="70" src="<c:url value="${acc.image}"/>"></td>
+                                                        <td><img height="50" width="50" src="<c:url value="${acc.image}"/>"></td>
                                                         <td>${acc.username}</td>
                                                         <td>${acc.password}</td>
                                                         <td>${acc.email}</td>

@@ -63,10 +63,10 @@
                                                                                  value="${thisaccount.email}" name="email" type="email"/>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label>Ảnh: </label> <input type="file" name="image" />
+                                                    <label>Ảnh: </label> <input type="file" name="image" accept="image/jpeg, image/png, image/jpg" />
                                                 </div>
                                                 <div class="form-group">
-                                                    <img class="img-fluid image-cover" src="${thisaccount.image}" alt="img">
+                                                    <img class="img-fluid image-cover" src="<c:url value="${thisaccount.image}"/>" alt="img">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Điện thoại: </label> <input class="form-control"

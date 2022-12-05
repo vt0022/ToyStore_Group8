@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
 package com.nhom8.controller.admin;
 
 import com.nhom8.context.UploadImage;
@@ -30,6 +26,7 @@ public class AccountInsertServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        doPost(request, response);
     }
 
     @Override
@@ -70,7 +67,7 @@ public class AccountInsertServlet extends HttpServlet {
                     dao.register(a);
                     
                     request.setAttribute("message", "Đã tạo tài khoản thành công!");
-                    request.getRequestDispatcher("/admin/user/manage").forward(request, response);
+                    request.getRequestDispatcher(request.getContextPath() + "/admin/account/manage").forward(request, response);
                 }
             } catch (Exception e) {
                 {

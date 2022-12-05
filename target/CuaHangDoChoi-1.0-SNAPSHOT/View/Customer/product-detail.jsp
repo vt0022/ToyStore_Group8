@@ -115,13 +115,13 @@
                                                                         <img src="<c:url value="${detail.image}"/>" alt="img">
                                                                     </div>
                                                                     <div id="item2" class="tab-pane fade">
-                                                                        <img src="${detail.image}" alt="img">
+                                                                        <img src="<c:url value="${detail.image}"/>" alt="img">
                                                                     </div>
                                                                     <div id="item3" class="tab-pane fade">
-                                                                        <img src="${detail.image}" alt="img">
+                                                                        <img src="<c:url value="${detail.image}"/>" alt="img">
                                                                     </div>
                                                                     <div id="item4" class="tab-pane fade">
-                                                                        <img src="${detail.image}" alt="img">
+                                                                        <img src="<c:url value="${detail.image}"/>" alt="img">
                                                                     </div>
                                                                     <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
                                                                         <i class="fa fa-expand"></i>
@@ -130,22 +130,22 @@
                                                                 <ul class="product-tab nav nav-tabs d-flex">
                                                                     <li class="active col">
                                                                         <a href="#item1" data-toggle="tab" aria-expanded="true" class="active show">
-                                                                            <img src="${detail.image}" alt="img">
+                                                                            <img src="<c:url value="${detail.image}"/>" alt="img">
                                                                         </a>
                                                                     </li>
                                                                     <li class="col">
                                                                         <a href="#item2" data-toggle="tab">
-                                                                            <img src="${detail.image}" alt="img">
+                                                                            <img src="<c:url value="${detail.image}"/>" alt="img">
                                                                         </a>
                                                                     </li>
                                                                     <li class="col">
                                                                         <a href="#item3" data-toggle="tab">
-                                                                            <img src="${detail.image}" alt="img">
+                                                                            <img src="<c:url value="${detail.image}"/>" alt="img">
                                                                         </a>
                                                                     </li>
                                                                     <li class="col">
                                                                         <a href="#item4" data-toggle="tab">
-                                                                            <img src="${detail.image}" alt="img">
+                                                                            <img src="<c:url value="${detail.image}"/>" alt="img">
                                                                         </a>
                                                                     </li>
                                                                 </ul>
@@ -161,37 +161,37 @@
                                                                                             <div class="images-container">
                                                                                                 <div class="js-qv-mask mask tab-content">
                                                                                                     <div id="modal-item1" class="tab-pane fade active in show">
-                                                                                                        <img src="${detail.image}" alt="img">
+                                                                                                        <img src="<c:url value="${detail.image}"/>" alt="img">
                                                                                                     </div>
                                                                                                     <div id="modal-item2" class="tab-pane fade">
-                                                                                                        <img src="${detail.image}" alt="img">
+                                                                                                        <img src="<c:url value="${detail.image}"/>" alt="img">
                                                                                                     </div>
                                                                                                     <div id="modal-item3" class="tab-pane fade">
-                                                                                                        <img src="${detail.image}" alt="img">
+                                                                                                        <img src="<c:url value="${detail.image}"/>" alt="img">
                                                                                                     </div>
                                                                                                     <div id="modal-item4" class="tab-pane fade">
-                                                                                                        <img src="${detail.image}" alt="img">
+                                                                                                        <img src="<c:url value="${detail.image}"/>" alt="img">
                                                                                                     </div>
                                                                                                 </div>
                                                                                                 <ul class="product-tab nav nav-tabs">
                                                                                                     <li class="active">
                                                                                                         <a href="#modal-item1" data-toggle="tab" class=" active show">
-                                                                                                            <img src="${detail.image}" alt="img">
+                                                                                                            <img src="<c:url value="${detail.image}"/>" alt="img">
                                                                                                         </a>
                                                                                                     </li>
                                                                                                     <li>
                                                                                                         <a href="#modal-item2" data-toggle="tab">
-                                                                                                            <img src="${detail.image}" alt="img">
+                                                                                                            <img src="<c:url value="${detail.image}"/>" alt="img">
                                                                                                         </a>
                                                                                                     </li>
                                                                                                     <li>
                                                                                                         <a href="#modal-item3" data-toggle="tab">
-                                                                                                            <img src="${detail.image}" alt="img">
+                                                                                                            <img src="<c:url value="${detail.image}"/>" alt="img">
                                                                                                         </a>
                                                                                                     </li>
                                                                                                     <li>
                                                                                                         <a href="#modal-item4" data-toggle="tab">
-                                                                                                            <img src="${detail.image}" alt="img">
+                                                                                                            <img src="<c:url value="${detail.image}"/>" alt="img">
                                                                                                         </a>
                                                                                                     </li>
                                                                                                 </ul>

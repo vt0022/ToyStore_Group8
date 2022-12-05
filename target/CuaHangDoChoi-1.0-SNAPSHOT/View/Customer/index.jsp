@@ -166,12 +166,12 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- main -->
+<!--                                 main 
                                 <div id="wrapper-site">
                                     <div id="content-wrapper" class="full-width">
                                         <div id="main">
                                             <section class="page-home">
-                                                <!--FEATURED PRODUCTS -->
+                                                FEATURED PRODUCTS 
                                                 <div class="featured-product">
                                                     <div class="title-tab-content  text-center">
                                                         <div class="title-product justify-content-between">
@@ -181,8 +181,8 @@
                                                     </div>
                                                     <div class="tab-content">
                                                         <div class="col-md-3 item text-center">
-                                                                <div class="product-miniature js-product-miniature item-one first-item">
-                                                                                                                                <c:forEach items="${productlist}" var="pro">
+                                                            <div class="product-miniature js-product-miniature item-one first-item">
+                                                                <c:forEach items="${productlist}" var="pro">
                                                                     <div class="thumbnail-container">
                                                                         <a href="${pageContext.request.contextPath}/productdetail?id=${pro.id}">
                                                                             <img class="img-fluid image-cover" src="<c:url value="/View/Customer/${pro.image}"/>" alt="img">
@@ -212,16 +212,16 @@
                                                                             </a>
                                                                         </div>
                                                                     </div>
-                                                                                </c:forEach>
-                                                                </div>
-                                                            
+                                                                </c:forEach>
+                                                            </div>
+
                                                         </div>
                                                     </div>
                                                 </div>
                                             </section>
                                         </div>
                                     </div>
-                                </div>
+                                </div>-->
                             </section>  
                         </div>
                     </div>

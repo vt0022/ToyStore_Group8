@@ -42,7 +42,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <h3>Thông tin sản phẩm:</h3>
-                                                <form role="form" action="insert" method="post" enctype="multipart/form-data">
+                                                <form role="form" action="<c:url value="/admin/account/insert"/>" method="post" enctype="multipart/form-data">
                                                     <div class="form-group">
                                                         <label>Tên sản phẩm: </label> 
                                                         <input class="form-control" placeholder="Nhập tên sản phẩm" name="name" required/>
@@ -57,7 +57,7 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Ảnh: </label> 
-                                                        <input type="file" name="image" />
+                                                        <input type="file" name="image" accept="image/jpeg, image/png, image/jpg"/>
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Giới thiệu: </label>
