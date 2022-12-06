@@ -70,7 +70,7 @@
                                     <div class="info">
                                         <p>Nếu vấn đề còn tiếp diễn, vui lòng liên hệ bộ phận quản trị của trang này và báo cáo lỗi bạn gặp phải.</p>
                                     </div>
-                                    <a class="btn btn-default" href="index.jsp">
+                                    <a class="btn btn-default" href="<c:url value="/View/Customer/index.jsp"/>">
                                         <i class="fa fa-home" aria-hidden="true"></i>
                                         <span>Quay về trang chủ</span>
                                     </a>

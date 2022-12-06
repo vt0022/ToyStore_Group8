@@ -59,7 +59,7 @@ public class RegisterServlet extends HttpServlet {
                 dao.register(b);
 
                 request.setAttribute("message", "Đăng ký thành công! Vui lòng đăng nhập!");
-                request.getRequestDispatcher(request.getContextPath() + "/View/Customer/user-login.jsp").forward(request, response);
+                request.getRequestDispatcher("/View/Customer/user-login.jsp").forward(request, response);
                 //response.sendRedirect(request.getContextPath()+"/View/Customer/user-login.jsp");
             } catch (Exception e) {
             }
