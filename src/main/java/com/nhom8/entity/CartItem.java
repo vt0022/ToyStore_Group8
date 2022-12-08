@@ -13,8 +13,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 
 @Entity
+//@Table(name = "CartItem")
 @NamedQuery(name = "CartItem.findAll", query = "SELECT ci FROM CartItem ci")
 public class CartItem implements Serializable {
 
@@ -26,12 +28,12 @@ public class CartItem implements Serializable {
 
     private int quantity;
 
-    //bi-directional many-to-one association to Account
-    @ManyToOne(fetch = FetchType.LAZY)
+    //bi-directional many-to-one association with Cart
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "cartid")
     private Cart cart;
 
-    //bi-directional many-to-one association to Product
+    //bi-directional many-to-one association with Product
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "pid")
     private Product product;

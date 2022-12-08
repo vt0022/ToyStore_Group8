@@ -2,9 +2,7 @@ package com.nhom8.dao;
 
 import com.nhom8.entity.Category;
 import com.nhom8.context.DBUtil;
-import com.nhom8.context.DBUtil;
 import com.nhom8.entity.Product;
-import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;

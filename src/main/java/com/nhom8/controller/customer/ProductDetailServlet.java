@@ -28,16 +28,16 @@ public class ProductDetailServlet extends HttpServlet {
         // Lấy id sản phẩm
         String productid = request.getParameter("id");
         int id = Integer.parseInt(productid);
-        // Gọi DAO để lấy dữ liệu
+
         ProductDAOImpl dao = new ProductDAOImpl();
         Product p = dao.getProductByID(id);
         
         CategoryDAOImpl dao2 = new CategoryDAOImpl();
         List<Category> category = dao2.getAllCategories();
-        // Đẩy dữ liệu lên JSP
+
         request.setAttribute("detail", p);
         request.setAttribute("categorylist", category);
-        // Chuyển tiếp yêu cầu servlet sang JSP
+
         request.getRequestDispatcher("/View/Customer/product-detail.jsp").forward(request, response);
     }
 

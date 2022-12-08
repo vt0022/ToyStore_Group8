@@ -5,7 +5,6 @@ com\nhom8\controller\admin\AccountInsertServlet.class
 com\nhom8\controller\admin\AdminLoginServlet.class
 com\nhom8\entity\Cart.class
 com\nhom8\controller\admin\OrderDetailServlet.class
-com\nhom8\controller\admin\UploadFileServlet.class
 com\nhom8\entity\Category.class
 com\nhom8\context\CloudinaryUtil.class
 com\nhom8\controller\admin\AccountManagerServlet.class
@@ -33,7 +32,6 @@ com\nhom8\dao\AccountDAOImpl.class
 com\nhom8\controller\admin\OrderManagerServlet.class
 com\nhom8\entity\Account.class
 com\nhom8\controller\admin\ProductDeleteServlet.class
-com\nhom8\context\UploadImage.class
 com\nhom8\dao\OrderDAO.class
 com\nhom8\entity\Category_.class
 com\nhom8\controller\customer\OrderPlaceServlet$1.class
@@ -52,6 +50,7 @@ com\nhom8\entity\MyOrder.class
 com\nhom8\controller\admin\CategoryInsertServlet.class
 com\nhom8\controller\admin\ProductManagerServlet.class
 com\nhom8\dao\CategoryDAOImpl.class
+com\nhom8\controller\admin\UploadImage.class
 com\nhom8\entity\OrderItem.class
 com\nhom8\controller\admin\CategoryUpdateServlet.class
 com\nhom8\controller\customer\RegisterServlet.class

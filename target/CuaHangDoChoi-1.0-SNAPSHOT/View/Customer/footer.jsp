@@ -1,11 +1,7 @@
 <!-- footer -->
 <%@ page pageEncoding="UTF-8" contentType="text/html" %>
-<!DOCTYPE html>
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
-<!--<![endif]-->
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
 <html>    
 <footer class="footer-one">
         <div class="inner-footer">
@@ -25,7 +21,7 @@
                             <div class="block">
                                 <div class="block-content">
                                     <p class="img-payment ">
-                                        <img class="img-fluid" src="img/home/payment-footer.png" alt="img">
+                                        <img class="img-fluid" src="<c:url value="/View/Customer/img/home/payment-footer.png"/>" alt="img">
                                     </p>
                                 </div>
                             </div>
@@ -120,10 +116,9 @@
                                             Chấp nhận thanh toán
                                         </div>
                                         <div class="payment-image">
-                                            <img class="img-fluid" src="img/home/payment.png" alt="img">
+                                            <img class="img-fluid" src="<c:url value="/View/Customer/img/home/payment.png"/>" alt="img">
                                         </div>
                                     </div>
-                                    <!-- Popup newsletter -->
                                 </div>
                             </div>
                         </div>

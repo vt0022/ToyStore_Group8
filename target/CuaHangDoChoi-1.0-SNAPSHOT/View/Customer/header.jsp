@@ -1,20 +1,15 @@
 <%@ page pageEncoding="UTF-8" contentType="text/html" %>
-<!DOCTYPE html>
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
-<!--<![endif]-->
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
 <html>
 
     <!-- Basic Page Needs -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <meta name="keywords" content="Furniture, Decor, Interior">
-    <meta name="description" content="Furnitica - Minimalist Furniture HTML Template">
-    <meta name="author" content="tivatheme">
-
+    <meta name="keywords" content="Toy, Kingdom, Paradise">
+    <meta name="description" content="Toy Kingdom - Where the kids wanna come">
+    <meta name="author" content="Group8">
 
     <!-- Mobile Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -57,7 +52,7 @@
                         <div class="menu navbar collapse navbar-collapse">
                             <ul class="menu-top navbar-nav">
                                 <li>  
-<!--                                    class="nav-link"-->
+                                    <!--                                    class="nav-link"-->
                                     <a href="<c:url value="/View/Customer/index.jsp"/>" class="parent">Trang chủ</a>
                                 </li>
                                 <li >
@@ -143,15 +138,12 @@
                                             </a>
                                         </div>
                                     </c:if>
-                                    <!--Đã xoá danh sách yêu thích-->
-                                    <!--Đã xoá tiền tệ-->
                                 </div>
                             </div>
                         </div>
                         <div class="desktop_cart">
                             <div class="blockcart block-cart cart-preview tiva-toggle">
                                 <div class="header-cart tiva-toggle-btn">
-<!--                                    <span class="cart-products-count">1</span>-->
                                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                                 </div>
                                 <div class="dropdown-content">

@@ -1,11 +1,8 @@
 package com.nhom8.controller.admin;
 
-import com.nhom8.dao.OrderDAOImpl;
 import com.nhom8.dao.OrderItemDAOImpl;
-import com.nhom8.entity.MyOrder;
 import com.nhom8.entity.OrderItem;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -40,7 +37,6 @@ public class OrderDetailServlet extends HttpServlet {
 
             List<OrderItem> orderItem = dao.getOrderItemByOrder(orderID);
 
-            // B2: Đẩy dữ liệu cho JSP
             request.setAttribute("orderitem", orderItem);
 
             request.getRequestDispatcher("/View/Admin/order-detail.jsp").forward(request, response);

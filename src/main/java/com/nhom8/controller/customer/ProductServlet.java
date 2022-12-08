@@ -29,7 +29,6 @@ public class ProductServlet extends HttpServlet {
         }
         int index = Integer.parseInt(indexPage);
           
-        // B1: Lấy dữ liệu từ DAO
         ProductDAOImpl dao  = new ProductDAOImpl();
         CategoryDAOImpl dao2 = new CategoryDAOImpl();
         
@@ -40,11 +39,9 @@ public class ProductServlet extends HttpServlet {
             endPage++;
         }
         
-        // Thực hiện lấy dữ liệu phân trang và danh mục
         List<Product> product = dao.pagingProducts(index, count);
         List<Category> category = dao2.getActiveCategories();
            
-        // B2: Đẩy dữ liệu cho JSP
         request.setAttribute("productlist", product);
         request.setAttribute("end", endPage);
         request.setAttribute("page", index);

@@ -60,7 +60,7 @@ public class CategoryUpdateServlet extends HttpServlet {
                 c.setStatus(status);
                 dao.update(c);
                 
-                request.setAttribute("message", "Đã cập nhật danh mục thành công");
+                request.setAttribute("message", "Đã cập nhật danh mục thành công!");
                 request.getRequestDispatcher("/admin/category/manage").forward(request, response);
             } catch (Exception e) {
             }

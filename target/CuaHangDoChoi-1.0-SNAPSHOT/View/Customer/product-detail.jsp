@@ -1,14 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
-<!--<![endif]-->
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en">
-
-    <!-- product-detail06:46-->
-
     <!-- Page Loader -->
     <div id="page-preloader">
         <div class="page-loading">
@@ -26,9 +19,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Sản phẩm</title>
 
-        <meta name="keywords" content="Furniture, Decor, Interior">
-                    <meta name="description" content="Furnitica - Minimalist Furniture HTML Template">
-        <meta name="author" content="tivatheme">
+        <meta name="keywords" content="Toy, Kingdom, Paradise">
+        <meta name="description" content="Toy Kingdom - Where the kids wanna come">
+        <meta name="author" content="Group8">
 
                             <!-- Mobile Meta -->
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -210,13 +203,6 @@
                                                         <div class="detail-description">
                                                             <div class="price-del">
                                                                 <span class="price">${detail.price} Đ</span>
-                                                                <!--
-                                                                <span class="float-right">
-                                                                    <span class="availb">Tình trạng: </span>
-                                                                    <span class="check">
-                                                                        <i class="fa fa-check-square-o" aria-hidden="true"></i>CÒN HÀNG</span>
-                                                                </span>
-                                                                -->
                                                             </div>
                                                             <p class="description">${detail.description}</p>
                                                             <div class="has-border cart-area">
@@ -265,11 +251,6 @@
             </a>
         </div>
 
-        <!-- menu-mobile-left -->
-        <jsp:include page="menu-mobile-left.jsp" />
-        <!-- menu-mobile-right -->
-        <jsp:include page="menu-mobile-right.jsp" />
-
         <!-- Vendor JS -->
         <script src="<c:url value="/View/Customer/libs/jquery/jquery.min.js"/>"></script>
         <script src="<c:url value="/View/Customer/libs/popper/popper.min.js"/>"></script>
@@ -285,5 +266,5 @@
         <!-- Template JS -->
         <script src="<c:url value="/View/Customer/js/theme.js"/>"></script>
     </body>
-    <!-- product-detail07:06-->
+
 </html>

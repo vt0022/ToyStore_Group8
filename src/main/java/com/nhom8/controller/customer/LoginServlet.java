@@ -1,13 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
 package com.nhom8.controller.customer;
 
 import com.nhom8.dao.AccountDAOImpl;
 import com.nhom8.entity.Account;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
@@ -16,10 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- *
- * @author Admin
- */
 @WebServlet(name = "LoginServlet", urlPatterns = {"/customer/login"})
 public class LoginServlet extends HttpServlet {
 
@@ -64,7 +55,6 @@ public class LoginServlet extends HttpServlet {
         } else {
             HttpSession session = request.getSession();
             session.setAttribute("account", a);
-            //request.getRequestDispatcher(request.getContextPath() + "/productlist").forward(request, response);
 
             if (save != null) {
                 Cookie u = new Cookie("username", username);
@@ -75,7 +65,7 @@ public class LoginServlet extends HttpServlet {
                 response.addCookie(p);
             }
 
-            response.sendRedirect(request.getContextPath() + "/productlist");
+            response.sendRedirect(request.getContextPath() + "/View/Customer/index.jsp");
         }
     }
 }

@@ -29,16 +29,16 @@ public class Product implements Serializable {
     private String manufacturer;
     private int status;
 
-    //bi-directional many-to-one association to Billdetail
-    @OneToMany(mappedBy = "product")
+    //bi-directional one-to-many association to OrderItem
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "product")
     private List<OrderItem> orderitems;
 
-    //bi-directional many-to-one association to Cart
-    @OneToMany(mappedBy = "product")
+    //bi-directional one-to-many association with CartItem
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "product")
     private List<CartItem> cartitems;
 
-    //bi-directional many-to-one association to Category
-    @ManyToOne(fetch = FetchType.LAZY)
+    //bi-directional many-to-one association with Category
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "catID")
     private Category category;
 

@@ -15,6 +15,7 @@ import org.apache.commons.beanutils.BeanUtils;
 public class CategoryInsertServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
+    
     CategoryDAOImpl dao = new CategoryDAOImpl();
 
     @Override

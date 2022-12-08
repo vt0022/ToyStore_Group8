@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -11,10 +12,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
+//@Table(name = "MyOrder")
 @NamedQuery(name = "MyOrder.findAll", query = "SELECT o FROM MyOrder o ORDER BY o.dateOrder DESC")
 public class MyOrder implements Serializable {
 
@@ -33,13 +36,13 @@ public class MyOrder implements Serializable {
     private String phone;
     private String address;
 
-    //bi-directional many-to-one association to Account
-    @ManyToOne
+    //bi-directional many-to-one association with Account
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "cusid")
     private Account account;
 
-    //bi-directional many-to-one association to Billdetail
-    @OneToMany(mappedBy = "order")
+    //bi-directional one-to-many association with OrderItem
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "order")
     private List<OrderItem> orderitems;
 
     public MyOrder() {

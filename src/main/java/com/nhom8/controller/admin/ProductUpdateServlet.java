@@ -1,6 +1,5 @@
 package com.nhom8.controller.admin;
 
-import com.nhom8.context.UploadImage;
 import com.nhom8.dao.CategoryDAOImpl;
 import com.nhom8.dao.ProductDAOImpl;
 import com.nhom8.entity.Category;
@@ -23,7 +22,6 @@ import org.apache.commons.beanutils.BeanUtils;
 @WebServlet(name = "ProductUpdateServlet", urlPatterns = {"/admin/product/update"})
 public class ProductUpdateServlet extends HttpServlet {
 
-    // Lấy dữ liệu từ DAO
     private static final long serialVersionUID = 1L;
 
     ProductDAOImpl dao = new ProductDAOImpl();
@@ -42,11 +40,9 @@ public class ProductUpdateServlet extends HttpServlet {
             List<Category> category = dao2.getAllCategories();
             Product product = dao.getProductByID(id);
 
-            // Đặt dữ liệu cho JSP
             request.setAttribute("categorylist", category);
             request.setAttribute("product", product);
 
-            // Chuyển tiếp yêu cầu của servlet sang jsp
             request.getRequestDispatcher("/View/Admin/edit-product.jsp").forward(request, response);
         } else {
             response.sendRedirect(request.getContextPath() + "/View/Admin/login.jsp");
@@ -62,7 +58,6 @@ public class ProductUpdateServlet extends HttpServlet {
 
         HttpSession session = request.getSession();
         if (session != null && session.getAttribute("adminAccount") != null) {
-            int id = Integer.parseInt(request.getParameter("id"));
             int catid = Integer.parseInt(request.getParameter("catid"));
             int status = Integer.parseInt(request.getParameter("status"));
 
@@ -71,14 +66,16 @@ public class ProductUpdateServlet extends HttpServlet {
             try {
                 BeanUtils.populate(product, request.getParameterMap());
 
-                //if (catid != product.getCategory().getId()) {
-                //    Category category = new Category();
                 category = dao2.getCategoryByID(catid);
                 product.setCategory(category);
+
+                if (product.getQuantity() <= 0) {
+                    status = 0; // Nếu nhập số lượng bé hơn bằng 0 thì chuyển về trạng thái vô hiệu
+                    product.setQuantity(0);
+                }
+                
                 product.setStatus(status);
 
-                // Xử lý nếu ảnh không được up lên
-                int flag = 0;
                 Map result = null;
                 Collection<Part> fileParts = request.getParts();
                 for (Part part : fileParts) {

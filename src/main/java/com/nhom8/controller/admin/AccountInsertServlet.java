@@ -1,6 +1,5 @@
 package com.nhom8.controller.admin;
 
-import com.nhom8.context.UploadImage;
 import com.nhom8.dao.AccountDAOImpl;
 import com.nhom8.entity.Account;
 import java.io.IOException;
@@ -39,14 +38,13 @@ public class AccountInsertServlet extends HttpServlet {
         HttpSession session = request.getSession();
         if (session != null && session.getAttribute("adminAccount") != null) {
 
-            //int status = Integer.parseInt(request.getParameter("status"));
             Account a = new Account();
             try {
                 BeanUtils.populate(a, request.getParameterMap());
 
                 if (dao.checkExist(a.getUsername()) != null) {
-                    request.setAttribute("message", "Tên đăng nhập đã tồn tại!"); // Có thể thêm phần lưu lại thông tin
-                    request.getRequestDispatcher(request.getContextPath() + "/View/Admin/add-user.jsp").forward(request, response);
+                    request.setAttribute("message", "Tên đăng nhập đã tồn tại!"); 
+                    request.getRequestDispatcher("/admin/account/manage").forward(request, response);
                 } else {
                     Map result = null;
                     Collection<Part> fileParts = request.getParts();

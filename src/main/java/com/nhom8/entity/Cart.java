@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.nhom8.entity;
 
 import java.io.Serializable;
@@ -15,8 +11,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Entity
+//@Table(name = "Cart")
 @NamedQuery(name = "Cart.findAll", query = "SELECT c FROM Cart c")
 public class Cart implements Serializable {
 
@@ -26,13 +24,13 @@ public class Cart implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    //bi-directional many-to-one association to Account
-    @OneToOne(fetch = FetchType.LAZY)
+    //bi-directional one-to-one association with Account
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "cusid")
     private Account account;
 
-    //bi-directional many-to-one association to Account
-    @OneToMany(mappedBy="cart")
+    //bi-directional one-to-many association with Cart
+    @OneToMany(fetch = FetchType.EAGER, mappedBy="cart")
     private List<CartItem> cartitems;
 
     public Cart() {

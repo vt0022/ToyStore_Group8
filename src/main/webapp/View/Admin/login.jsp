@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html lang="en">
-    <!-- user-login11:10-->
     <head>
         <!-- Basic Page Needs -->
         <meta charset="utf-8">

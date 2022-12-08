@@ -23,7 +23,7 @@ public class Category implements Serializable {
 
     private int status;
 
-    //bi-directional many-to-one association to Product
+    //bi-directional one-to-many association with Product
     @OneToMany(mappedBy = "category")
     private List<Product> products;
 

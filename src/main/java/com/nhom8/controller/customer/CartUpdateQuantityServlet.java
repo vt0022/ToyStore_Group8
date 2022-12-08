@@ -1,12 +1,8 @@
 package com.nhom8.controller.customer;
 
-import com.nhom8.dao.CartDAOImpl;
 import com.nhom8.dao.CartItemDAOImpl;
-import com.nhom8.entity.Account;
-import com.nhom8.entity.Cart;
 import com.nhom8.entity.CartItem;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

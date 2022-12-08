@@ -87,24 +87,6 @@ public class AccountDAOImpl implements AccountDAO{
         return a.get(0);
     }
 
-//    public boolean checkWrongPassword(String username, String password) {
-//        EntityManager em = DBUtil.getEmFactory().createEntityManager(); //trả về đối tượng EM
-//        // createQuery khi dùng câu lệnh thẳng, createNamedQuery khi dùng câu lệnh đã đặt tên bên entity
-//        TypedQuery<Account> q = em.createQuery("SELECT acc FROM Account acc WHERE acc.username = :username", Account.class); // trả về kết quả dưới dạng đối tượng của class
-//        q.setParameter("username", username); // Truyền tham số
-//
-//        List<Account> a = new ArrayList<>();
-//        try {
-//            a = q.getResultList();
-//        } finally {
-//            em.close();
-//        }
-//        if(a.get(0).getPassword()){
-//            return true;
-//        }
-//        return false;
-//    }
-
     @Override
     public Account checkExist(String username) {
         EntityManager em = DBUtil.getEmFactory().createEntityManager(); //trả về đối tượng EM

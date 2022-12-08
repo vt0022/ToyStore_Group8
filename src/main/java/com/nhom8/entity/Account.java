@@ -7,7 +7,6 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -33,10 +32,10 @@ public class Account implements Serializable {
     private String address;
     private int status;
 
-    @OneToOne(fetch = FetchType.LAZY, mappedBy = "account")
+    @OneToOne(fetch = FetchType.EAGER, mappedBy = "account")
     private Cart cart;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "account")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "account")
     private List<MyOrder> order;
 
     public Account() {

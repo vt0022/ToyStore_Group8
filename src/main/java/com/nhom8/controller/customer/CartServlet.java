@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
 package com.nhom8.controller.customer;
 
 import com.nhom8.dao.AccountDAOImpl;
@@ -11,7 +7,6 @@ import com.nhom8.entity.Account;
 import com.nhom8.entity.Cart;
 import com.nhom8.entity.CartItem;
 import java.io.IOException;
-import java.text.DecimalFormat;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,10 +15,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- *
- * @author Admin
- */
 @WebServlet(name = "CartServlet", urlPatterns = {"/mycart"})
 public class CartServlet extends HttpServlet {
 

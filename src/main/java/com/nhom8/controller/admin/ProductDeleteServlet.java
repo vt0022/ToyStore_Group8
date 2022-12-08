@@ -4,7 +4,6 @@ import com.nhom8.dao.ProductDAOImpl;
 import com.nhom8.entity.OrderItem;
 import com.nhom8.entity.Product;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

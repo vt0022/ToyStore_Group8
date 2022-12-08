@@ -46,7 +46,7 @@ public class CategoryServlet extends HttpServlet {
         }
         int cid = Integer.parseInt(id);
 
-        // B1: Lấy dữ liệu từ DAO
+        // Lấy dữ liệu từ DAO
         ProductDAOImpl dao = new ProductDAOImpl();
         CategoryDAOImpl dao2 = new CategoryDAOImpl();
 
@@ -61,7 +61,7 @@ public class CategoryServlet extends HttpServlet {
         List<Product> product = dao.pagingProductsByCategory(cid, index, count);
         List<Category> category = dao2.getActiveCategories();
 
-        // B2: Đẩy dữ liệu cho JSP
+        // Đẩy dữ liệu cho JSP
         request.setAttribute("productlist", product);
         request.setAttribute("end", endPage);
         request.setAttribute("page", index);

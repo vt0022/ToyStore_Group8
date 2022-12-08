@@ -259,7 +259,7 @@ public class ProductDAOImpl implements ProductDAO {
     public int countProductsWithCategory(int cid) {
         EntityManager em = DBUtil.getEmFactory().createEntityManager(); //trả về đối tượng EM
         // createQuery khi dùng câu lệnh thẳng, createNamedQuery khi dùng câu lệnh đã đặt tên bên entity
-        //Query q = em.createQuery("SELECT COUNT(p) FROM Product p"); // trả về kết quả dưới dạng đối tượng của class
+        // Query q = em.createQuery("SELECT COUNT(p) FROM Product p"); // trả về kết quả dưới dạng đối tượng của class
         TypedQuery<Number> q = em.createQuery("SELECT COUNT(p) FROM Category c, IN(c.products) p WHERE c.id = :cid AND c.status = 1 AND p.status = 1", Number.class); // trả về kết quả dưới dạng đối tượng của class
 
         q.setParameter("cid", cid); // Truyền tham số

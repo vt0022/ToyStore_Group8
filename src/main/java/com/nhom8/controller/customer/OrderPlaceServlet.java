@@ -13,6 +13,7 @@ import com.nhom8.entity.OrderItem;
 import com.nhom8.entity.Product;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Properties;
@@ -94,7 +95,7 @@ public class OrderPlaceServlet extends HttpServlet {
         String email = request.getParameter("email");
         String phone = request.getParameter("phone");
         String address = request.getParameter("address");
-        java.sql.Date date = new java.sql.Date(System.currentTimeMillis());
+        java.sql.Timestamp date = new java.sql.Timestamp(new java.util.Date().getTime());
 
         if (session != null && session.getAttribute("account") != null) {
             Account a = (Account) session.getAttribute("account");

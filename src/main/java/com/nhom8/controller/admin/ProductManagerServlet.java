@@ -3,7 +3,6 @@ package com.nhom8.controller.admin;
 import com.nhom8.dao.ProductDAOImpl;
 import com.nhom8.entity.Product;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -30,16 +29,12 @@ public class ProductManagerServlet extends HttpServlet {
         HttpSession session = request.getSession();
         if (session != null && session.getAttribute("adminAccount") != null) {
 
-            // B1: Lấy dữ liệu từ DAO
             ProductDAOImpl dao = new ProductDAOImpl();
 
-            // Thực hiện lấy dữ liệu phân trang và danh mục
             List<Product> product = dao.getAllProducts();
 
-            // B2: Đẩy dữ liệu cho JSP
             request.setAttribute("productlist", product);
-            //request.setAttribute("end", endPage);
-            //request.setAttribute("page", index);
+
             request.getRequestDispatcher("/View/Admin/list-product.jsp").forward(request, response);
         } else {
             response.sendRedirect(request.getContextPath() + "/View/Admin/login.jsp");

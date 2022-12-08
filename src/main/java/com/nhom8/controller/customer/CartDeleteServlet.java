@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
 package com.nhom8.controller.customer;
 
 import com.nhom8.dao.CartItemDAOImpl;
@@ -18,9 +14,7 @@ public class CartDeleteServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
-    //CartDAOImpl dao = new CartDAOImpl();
-    CartItemDAOImpl dao2 = new CartItemDAOImpl();
-    //ProductDAOImpl dao3 = new ProductDAOImpl();
+    CartItemDAOImpl dao = new CartItemDAOImpl();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -35,10 +29,8 @@ public class CartDeleteServlet extends HttpServlet {
 
         if (session != null && session.getAttribute("account") != null) {
             int cartitemid = Integer.parseInt(request.getParameter("id")); // lấy id của cart item
-            //Product product = dao3.getProductByID(productid);
-            System.out.println(cartitemid);
 
-            dao2.delete(cartitemid);
+            dao.delete(cartitemid);
 
             response.sendRedirect(request.getContextPath() + "/mycart");
         }

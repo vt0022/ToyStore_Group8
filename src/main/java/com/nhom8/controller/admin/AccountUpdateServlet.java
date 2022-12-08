@@ -1,6 +1,5 @@
 package com.nhom8.controller.admin;
 
-import com.nhom8.context.UploadImage;
 import com.nhom8.dao.AccountDAOImpl;
 import com.nhom8.entity.Account;
 import java.io.IOException;
@@ -37,10 +36,8 @@ public class AccountUpdateServlet extends HttpServlet {
             
             session.setAttribute("updatedaccount", a);
 
-            // Đặt dữ liệu cho JSP
             request.setAttribute("thisaccount", a);
 
-            // Chuyển tiếp yêu cầu của servlet sang jsp
             request.getRequestDispatcher("/View/Admin/edit-user.jsp").forward(request, response);
         } else {
             response.sendRedirect(request.getContextPath() + "/View/Admin/login.jsp");

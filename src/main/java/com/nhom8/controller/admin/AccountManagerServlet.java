@@ -32,10 +32,9 @@ public class AccountManagerServlet extends HttpServlet {
 
         HttpSession session = request.getSession();
         if (session != null && session.getAttribute("adminAccount") != null) {
-            // Thực hiện lấy dữ liệu phân trang và danh mục
+
             List<Account> account = dao.getAllAccounts();
 
-            // B2: Đẩy dữ liệu cho JSP
             request.setAttribute("account", account);
 
             request.getRequestDispatcher("/View/Admin/list-user.jsp").forward(request, response);

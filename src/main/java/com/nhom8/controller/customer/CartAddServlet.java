@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
 package com.nhom8.controller.customer;
 
 import com.nhom8.dao.CartDAOImpl;
@@ -12,7 +8,6 @@ import com.nhom8.entity.Product;
 import com.nhom8.entity.Cart;
 import com.nhom8.entity.CartItem;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,10 +16,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- *
- * @author Admin
- */
 @WebServlet(name = "AddCartServlet", urlPatterns = {"/addcart"})
 public class CartAddServlet extends HttpServlet {
 
@@ -53,14 +44,16 @@ public class CartAddServlet extends HttpServlet {
         if (session != null && session.getAttribute("account") != null) {
             int productid = Integer.parseInt(request.getParameter("id"));//
             Product product = dao3.getProductByID(productid);
-            System.out.println(productid);
+            
             String quant = request.getParameter("quantity");
+            // Quantity mặc định là 1
             if (quant == null) {
                 quant = "1";
             }
             int quantity = Integer.parseInt(quant);
             Account a = (Account) session.getAttribute("account");
             Cart cart = dao.getCartByCusID(a.getId());
+            // Nếu khách hàng chưa có cart thì thêm mới
             if (cart == null) {
                 cart = new Cart();
                 cart.setAccount(a);
@@ -68,10 +61,10 @@ public class CartAddServlet extends HttpServlet {
             }
 
             List<CartItem> cartItem = dao2.getCartItemByCart(cart.getId());
-            session.setAttribute("list-cart", cartItem);
-            List<CartItem> cart_Item = (List<CartItem>) session.getAttribute("list-cart");
-
-            if (cart_Item == null) {
+//            session.setAttribute("list-cart", cartItem);
+//            List<CartItem> cart_Item = (List<CartItem>) session.getAttribute("list-cart");
+            // Nếu chưa có sản phẩm nào trong giỏ hàng thì thêm vào
+            if (cartItem == null) {
                 CartItem ci = new CartItem();
                 ci.setQuantity(quantity);
                 ci.setCart(cart);
@@ -79,27 +72,27 @@ public class CartAddServlet extends HttpServlet {
                 dao2.insert(ci);
                 cartItem = dao2.getCartItemByCart(cart.getId());
                 session.setAttribute("list-cart", cartItem);
-                response.sendRedirect(request.getContextPath() + "/productlist");
+                response.sendRedirect(request.getContextPath() + "/productdetail?id=" + request.getParameter("id"));
             } else {
                 boolean exist = false;
-                for (CartItem ci : cart_Item) {
-                    if (ci.getProduct().getId() == productid) {
+                for (CartItem ci : cartItem) {
+                    if (ci.getProduct().getId() == productid) { // Sản phẩm đã có trong giỏ hàng thì cập nhật số lượng
                         ci.setId(ci.getId());
                         ci.setQuantity(ci.getQuantity() + quantity);
                         ci.setCart(cart);
                         ci.setProduct(product);
                         dao2.update(ci);
-                        response.sendRedirect(request.getContextPath() + "/productlist");
+                        response.sendRedirect(request.getContextPath() + "/productdetail?id=" + request.getParameter("id"));
                         return;
                     }
                 }
-                if (!exist) {
+                if (!exist) { // Chưa có trong giỏ hàng thì thêm mới
                     CartItem ci = new CartItem();
                     ci.setQuantity(quantity);
                     ci.setCart(cart);
                     ci.setProduct(product);
                     dao2.insert(ci);
-                    response.sendRedirect(request.getContextPath() + "/productlist");
+                    response.sendRedirect(request.getContextPath() + "/productdetail?id=" + request.getParameter("id"));
                 }
             }
         } else {

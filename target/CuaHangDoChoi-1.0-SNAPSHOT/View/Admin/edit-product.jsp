@@ -58,7 +58,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Giới thiệu: </label> <br>
-                                                    <textarea rows="4" cols="50" name="description" value="${product.description}" required ></textarea>
+                                                    <textarea rows="4" cols="50" name="description" required >${product.description}</textarea>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Nhà sản xuất: </label>

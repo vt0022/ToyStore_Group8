@@ -1,13 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
-<!--<![endif]-->
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
 <html lang="en">
-    <!-- product-cart07:06-->
-
     <!-- Page Loader -->
     <div id="page-preloader">
         <div class="page-loading">
@@ -25,9 +19,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Giỏ hàng</title>
 
-        <meta name="keywords" content="Furniture, Decor, Interior">
-        <meta name="description" content="Furnitica - Minimalist Furniture HTML Template">
-        <meta name="author" content="tivatheme">
+        <meta name="keywords" content="Toy, Kingdom, Paradise">
+        <meta name="description" content="Toy Kingdom - Where the kids wanna come">
+        <meta name="author" content="Group8">
 
         <!-- Mobile Meta -->
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -124,8 +118,8 @@
                                                                                     <input type="hidden" name="id" value="${ci.id}" class="input-group form-control">
                                                                                     <input type="number" name="quantity" value="${ci.quantity}" class="input-group form-control checkout-cart">
 
-                                                                                    <button type="submit" btn btn-primary>
-                                                                                        <a class="cart-button" href="${pageContext.request.contextPath}/cartupdatequantity?id=${ci.id}" data-button-action="update-cart">
+                                                                                    <button type="submit" btn btn-primary style="border: none">
+                                                                                        <a class="cart-button" href="${pageContext.request.contextPath}/cartupdatequantity?id=${ci.id}" data-button-action="update-cart" style="border: none">
                                                                                             <i class="fa fa-refresh" style="border: none" aria-hidden="true"></i>
                                                                                         </a>
                                                                                     </button>
@@ -225,11 +219,6 @@
             </a>
         </div>
 
-        <!-- menu-mobile-left -->
-        <jsp:include page="menu-mobile-left.jsp" />
-        <!-- menu-mobile-right -->
-        <jsp:include page="menu-mobile-right.jsp" />
-
         <!-- Vendor JS -->
         <script src="<c:url value="/View/Customer/libs/jquery/jquery.min.js"/>"></script>
         <script src="<c:url value="/View/Customer/libs/popper/popper.min.js"/>"></script>
@@ -246,6 +235,4 @@
         <script src="<c:url value="/View/Customer/js/theme.js"/>"></script>
     </body>
 
-
-    <!-- product-cart07:12-->
 </html>

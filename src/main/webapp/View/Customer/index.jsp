@@ -1,13 +1,7 @@
 <%@ page pageEncoding="UTF-8" contentType="text/html" %>
-<!DOCTYPE html>
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
-<!--<![endif]-->
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
 <html lang="en">
-    <!-- home307:34-->
-
     <!-- Page Loader -->
     <div id="page-preloader">
         <div class="page-loading">
@@ -25,9 +19,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Toy Kingdom</title>
 
-        <meta name="keywords" content="Furniture, Decor, Interior">
-        <meta name="description" content="Furnitica - Minimalist Furniture HTML Template">
-        <meta name="author" content="tivatheme">
+        <meta name="keywords" content="Toy, Kingdom, Paradise">
+        <meta name="description" content="Toy Kingdom - Where the kids wanna come">
+        <meta name="author" content="Group8">
 
         <!-- Mobile Meta -->
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -166,62 +160,6 @@
                                         </div>
                                     </div>
                                 </div>
-<!--                                 main 
-                                <div id="wrapper-site">
-                                    <div id="content-wrapper" class="full-width">
-                                        <div id="main">
-                                            <section class="page-home">
-                                                FEATURED PRODUCTS 
-                                                <div class="featured-product">
-                                                    <div class="title-tab-content  text-center">
-                                                        <div class="title-product justify-content-between">
-                                                            <h2>FEATURED PRODUCTS</h2>
-                                                            <p>LOREM IPSUM DOLOR SIT AMET CONSECTETUR </p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="tab-content">
-                                                        <div class="col-md-3 item text-center">
-                                                            <div class="product-miniature js-product-miniature item-one first-item">
-                                                                <c:forEach items="${productlist}" var="pro">
-                                                                    <div class="thumbnail-container">
-                                                                        <a href="${pageContext.request.contextPath}/productdetail?id=${pro.id}">
-                                                                            <img class="img-fluid image-cover" src="<c:url value="/View/Customer/${pro.image}"/>" alt="img">
-                                                                            <img class="img-fluid image-secondary" src="<c:url value="/View/Customer/${pro.image}"/>" alt="img">
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="product-description">
-                                                                        <div class="product-groups">
-                                                                            <div class="product-title">
-                                                                                <a href="${pageContext.request.contextPath}/productdetail?id=${pro.id}">${pro.name}</a>
-                                                                            </div>
-                                                                            <div class="product-group-price">
-                                                                                <div class="product-price-and-shipping">
-                                                                                    <span class="price">${pro.price} VNĐ</span>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="product-buttons d-flex justify-content-center">
-                                                                            <form action="${pageContext.request.contextPath}/addcart?id=${pro.id}" method="post" class="formAddToCart">
-                                                                                <input type="hidden" name="quantity" value="1">
-                                                                                <a class="add-to-cart" href="${pageContext.request.contextPath}/addcart?id=${pro.id}" data-button-action="add-to-cart">
-                                                                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                                                                </a>
-                                                                            </form>
-                                                                            <a href="${pageContext.request.contextPath}/addcart?id=${pro.id}" class="quick-view hidden-sm-down" data-link-action="quickview">
-                                                                                <i class="fa fa-eye" aria-hidden="true"></i>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                </c:forEach>
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </section>
-                                        </div>
-                                    </div>
-                                </div>-->
                             </section>  
                         </div>
                     </div>
@@ -232,18 +170,12 @@
         <!-- footer -->
         <jsp:include page="footer.jsp" />
 
-
         <!-- back top top -->
         <div class="back-to-top">
             <a href="#">
                 <i class="fa fa-long-arrow-up"></i>
             </a>
         </div>
-
-        <!-- menu-mobile-left -->
-        <jsp:include page="menu-mobile-left.jsp" />
-        <!-- menu-mobile-right -->
-        <jsp:include page="menu-mobile-right.jsp" />
 
         <!-- Vendor JS -->
         <script src="<c:url value="/View/Customer/libs/jquery/jquery.min.js"/>"></script>
@@ -261,6 +193,4 @@
         <script src="<c:url value="/View/Customer/js/theme.js"/>"></script>
     </body>
 
-
-    <!-- home308:14-->
 </html>

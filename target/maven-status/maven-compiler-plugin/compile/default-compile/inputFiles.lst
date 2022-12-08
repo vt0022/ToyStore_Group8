@@ -1,9 +1,7 @@
 D:\Nam3\Ky1\LapTrinhWeb\Tuan8\Project\CuaHangDoChoi\src\main\java\com\nhom8\controller\admin\ProductDeleteServlet.java
 D:\Nam3\Ky1\LapTrinhWeb\Tuan8\Project\CuaHangDoChoi\src\main\java\com\nhom8\controller\admin\ProductManagerServlet.java
 D:\Nam3\Ky1\LapTrinhWeb\Tuan8\Project\CuaHangDoChoi\src\main\java\com\nhom8\entity\Cart.java
-D:\Nam3\Ky1\LapTrinhWeb\Tuan8\Project\CuaHangDoChoi\src\main\java\com\nhom8\context\UploadImage.java
 D:\Nam3\Ky1\LapTrinhWeb\Tuan8\Project\CuaHangDoChoi\src\main\java\com\nhom8\dao\OrderDAO.java
-D:\Nam3\Ky1\LapTrinhWeb\Tuan8\Project\CuaHangDoChoi\src\main\java\com\nhom8\controller\admin\UploadFileServlet.java
 D:\Nam3\Ky1\LapTrinhWeb\Tuan8\Project\CuaHangDoChoi\src\main\java\com\nhom8\entity\Product.java
 D:\Nam3\Ky1\LapTrinhWeb\Tuan8\Project\CuaHangDoChoi\src\main\java\com\nhom8\controller\customer\ProductDetailServlet.java
 D:\Nam3\Ky1\LapTrinhWeb\Tuan8\Project\CuaHangDoChoi\src\main\java\com\nhom8\dao\OrderDAOImpl.java
@@ -46,6 +44,7 @@ D:\Nam3\Ky1\LapTrinhWeb\Tuan8\Project\CuaHangDoChoi\src\main\java\com\nhom8\dao\
 D:\Nam3\Ky1\LapTrinhWeb\Tuan8\Project\CuaHangDoChoi\src\main\java\com\nhom8\controller\customer\CartAddServlet.java
 D:\Nam3\Ky1\LapTrinhWeb\Tuan8\Project\CuaHangDoChoi\src\main\java\com\nhom8\controller\admin\AccountUpdateServlet.java
 D:\Nam3\Ky1\LapTrinhWeb\Tuan8\Project\CuaHangDoChoi\src\main\java\com\nhom8\controller\admin\CategoryInsertServlet.java
+D:\Nam3\Ky1\LapTrinhWeb\Tuan8\Project\CuaHangDoChoi\src\main\java\com\nhom8\controller\admin\UploadImage.java
 D:\Nam3\Ky1\LapTrinhWeb\Tuan8\Project\CuaHangDoChoi\src\main\java\com\nhom8\dao\CartItemDAO.java
 D:\Nam3\Ky1\LapTrinhWeb\Tuan8\Project\CuaHangDoChoi\src\main\java\com\nhom8\controller\customer\CartServlet.java
 D:\Nam3\Ky1\LapTrinhWeb\Tuan8\Project\CuaHangDoChoi\src\main\java\com\nhom8\controller\customer\OrderDetailCustomerServlet.java

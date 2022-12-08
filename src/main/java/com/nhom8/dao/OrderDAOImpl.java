@@ -17,11 +17,11 @@ public class OrderDAOImpl implements OrderDAO {
         // createQuery khi dùng câu lệnh thẳng, createNamedQuery khi dùng câu lệnh đã đặt tên bên entity
         TypedQuery<MyOrder> q = em.createNamedQuery("MyOrder.findAll", MyOrder.class); // trả về kết quả dưới dạng đối tượng của class
 
-        List<MyOrder> order;
+        List<MyOrder> order = new ArrayList<>();
         try {
             order = q.getResultList();
-            if (order == null || order.isEmpty()) {
-                order = null;
+            if (order.isEmpty() || order == null) {
+                order = Collections.emptyList();
             }
         } finally {
             em.close();
@@ -52,10 +52,10 @@ public class OrderDAOImpl implements OrderDAO {
     public static void main(String[] args) {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
         EntityTransaction trans = em.getTransaction();
-
+        OrderDAOImpl dao = new OrderDAOImpl();
         trans.begin();
-        //MyOrder p = em.find(MyOrder.class, "DC010");
-        //System.out.println(p.getId());
+        List<MyOrder> p = dao.getAllOrders();
+        System.out.println(p.size());
     }
 
     /*
@@ -66,6 +66,7 @@ public class OrderDAOImpl implements OrderDAO {
         System.out.println(p);
     }
      */
+    
     @Override
     public void insert(MyOrder o) {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();

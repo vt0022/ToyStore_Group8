@@ -1,12 +1,10 @@
 package com.nhom8.controller.admin;
 
-import com.nhom8.context.UploadImage;
 import com.nhom8.dao.CategoryDAOImpl;
 import com.nhom8.dao.ProductDAOImpl;
 import com.nhom8.entity.Category;
 import com.nhom8.entity.Product;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -34,13 +32,11 @@ public class ProductInsertServlet extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession();
         if (session != null && session.getAttribute("adminAccount") != null) {
-            // Lấy dữ liệu từ DAO
+
             List<Category> category = dao2.getAllCategories();
 
-            // Đặt dữ liệu cho JSP
             request.setAttribute("categorylist", category);
 
-            // Chuyển tiếp yêu cầu của servlet sang jsp
             request.getRequestDispatcher("/View/Admin/add-product.jsp").forward(request, response);
         } else {
             response.sendRedirect(request.getContextPath() + "/View/Admin/login.jsp");
@@ -65,6 +61,10 @@ public class ProductInsertServlet extends HttpServlet {
             try {
                 BeanUtils.populate(product, request.getParameterMap());
                 product.setCategory(c);
+                if(product.getQuantity() <= 0){
+                    status = 0; // Nếu nhập số lượng bé hơn bằng 0 thì chuyển về trạng thái vô hiệu
+                    product.setQuantity(0); 
+                }
                 product.setStatus(status);
 
                 Map result = null;
@@ -79,8 +79,9 @@ public class ProductInsertServlet extends HttpServlet {
                             throw new RuntimeException("Loi upload");
                         }
                     }
-                    dao.insert(product);
                 }
+                dao.insert(product);
+
                 request.setAttribute("message", "Đã thêm đồ chơi thành công!");
                 request.getRequestDispatcher("/admin/product/manage").forward(request, response);
             } catch (Exception e) {

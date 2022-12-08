@@ -2,14 +2,17 @@ package com.nhom8.entity;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 
 @Entity
+//@Table(name = "OrderItem")
 @NamedQuery(name = "OrderItem.findAll", query = "SELECT oi FROM OrderItem oi")
 public class OrderItem implements Serializable {
 
@@ -23,12 +26,12 @@ public class OrderItem implements Serializable {
 
     private int price;
 
-    //bi-directional many-to-one association to Product
-    @ManyToOne
+    //bi-directional many-to-one association with Product
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "productid")
     private Product product;
 
-    //bi-directional many-to-one association to Bill
+    //bi-directional many-to-one association with MyOrder
     @ManyToOne
     @JoinColumn(name = "orderid")
     private MyOrder order;

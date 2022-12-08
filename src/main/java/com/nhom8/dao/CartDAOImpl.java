@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.nhom8.dao;
 
 import com.nhom8.context.DBUtil;
@@ -12,10 +8,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
-/**
- *
- * @author Admin
- */
 public class CartDAOImpl implements CartDAO{
     @Override
     public List<Cart> getAllCarts() {
@@ -72,6 +64,7 @@ public class CartDAOImpl implements CartDAO{
         System.out.println(p);
     }
      */
+    
     @Override
     public void insert(Cart c) {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -100,12 +93,7 @@ public class CartDAOImpl implements CartDAO{
 
         try {
             Cart c = em.find(Cart.class, cid);
-            //if(p != null){
             em.remove(c);
-            //}
-            //else{
-            //    throw new Exception("Không tìm thấy!");
-            //}
 
             trans.commit();
         } catch (Exception e) {

@@ -55,7 +55,7 @@
                                                 <tr>
                                                     <th class="text-center">ID</th>
                                                     <th class="text-center">Ngày</th>
-                                                    <th class="text-center">Tổng</th>
+                                                    <th class="text-center">Tổng (VNĐ)</th>
                                                     <th class="text-center">Tên</th>
                                                     <th class="text-center">Email</th>
                                                     <th class="text-center">Điện thoại</th>

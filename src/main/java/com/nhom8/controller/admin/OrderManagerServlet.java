@@ -3,7 +3,6 @@ package com.nhom8.controller.admin;
 import com.nhom8.dao.OrderDAOImpl;
 import com.nhom8.entity.MyOrder;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -36,7 +35,6 @@ public class OrderManagerServlet extends HttpServlet {
 
             List<MyOrder> order = dao.getAllOrders();
 
-            // B2: Đẩy dữ liệu cho JSP
             request.setAttribute("orderlist", order);
 
             request.getRequestDispatcher("/View/Admin/list-order.jsp").forward(request, response);

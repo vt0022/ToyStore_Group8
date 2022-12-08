@@ -1,6 +1,6 @@
 package com.nhom8.controller.customer;
 
-import com.nhom8.context.UploadImage;
+import com.nhom8.controller.admin.UploadImage;
 import com.nhom8.dao.AccountDAOImpl;
 import com.nhom8.entity.Account;
 import java.io.IOException;
@@ -82,7 +82,6 @@ public class UpdateCustomerServlet extends HttpServlet {
 
                 request.setAttribute("message", "Đã cập nhật tài khoản thành công!");
                 request.getRequestDispatcher("/View/Customer/user-account.jsp").forward(request, response);
-                //response.sendRedirect(request.getContextPath() + "/View/Customer/user-account.jsp");
             } catch (Exception e) {
             }
         } else {
