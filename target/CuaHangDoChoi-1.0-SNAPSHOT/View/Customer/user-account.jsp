@@ -86,7 +86,12 @@
                                     <tbody>
                                         <tr>
                                             <th class="first_item">Ảnh đại diện: </th>
-                                            <td><img class="img-fluid image-cover" style="width: 200px; height: 200px" src="<c:url value="${sessionScope.account.image}"/>" alt="avatar"></td>
+                                                <c:if test="${! empty sessionScope.account.image}">
+                                                    <td><img class="img-fluid image-cover" style="width: 200px; height: 200px" src="<c:url value="${sessionScope.account.image}"/>" alt="avatar"></td>
+                                                </c:if>
+                                                <c:if test="${empty sessionScope.account.image}">
+                                                    <td><img class="img-fluid image-cover" style="width: 200px; height: 200px" src="<c:url value="/View/Customer/img/profile/user.png"/>" alt="avatar"></td>
+                                                </c:if>
                                         </tr>
                                         <tr>
                                             <th class="first_item">Họ và tên: </th>

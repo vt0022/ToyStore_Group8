@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet(name = "ProductServlet", urlPatterns = {"/productlist"})
 public class ProductServlet extends HttpServlet {
@@ -46,6 +47,10 @@ public class ProductServlet extends HttpServlet {
         request.setAttribute("end", endPage);
         request.setAttribute("page", index);
         request.setAttribute("categorylist", category);
+        
+        HttpSession session = request.getSession();
+        session.setAttribute("url", "/productlist?index=" + index);
+        
         request.getRequestDispatcher("/View/Customer/product-list.jsp").forward(request, response);       
     }
     

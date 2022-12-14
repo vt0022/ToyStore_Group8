@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet(name = "CategoryServlet", urlPatterns = {"/categorylist"})
 public class CategoryServlet extends HttpServlet {
@@ -51,7 +52,7 @@ public class CategoryServlet extends HttpServlet {
         CategoryDAOImpl dao2 = new CategoryDAOImpl();
 
         // Tính số trang
-        int total = dao.countProductsWithCategory(cid); 
+        int total = dao.countProductsWithCategory(cid);
         int endPage = total / count;
         if (total % count != 0) {
             endPage++;
@@ -67,6 +68,10 @@ public class CategoryServlet extends HttpServlet {
         request.setAttribute("page", index);
         request.setAttribute("categorylist", category);
         request.setAttribute("catid", cid);
+
+        HttpSession session = request.getSession();
+        session.setAttribute("url", "/categorylist?index=" + index + "&categoryid=" + cid);
+
         request.getRequestDispatcher("/View/Customer/category-by.jsp").forward(request, response);
     }
 

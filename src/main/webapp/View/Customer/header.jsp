@@ -120,7 +120,7 @@
                                         <div>
                                             <a class="register" href="<c:url value="/View/Customer/user-register.jsp"/>" rel="nofollow" title="Register Account">
                                                 <i class="fa fa-user"></i>
-                                                <span>Đăng ký tài khoản</span>
+                                                <span>Đăng ký</span>
                                             </a>
                                         </div>
                                     </c:if>

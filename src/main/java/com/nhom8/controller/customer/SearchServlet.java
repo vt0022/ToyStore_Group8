@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet(name = "SearchServlet", urlPatterns = {"/search"})
 public class SearchServlet extends HttpServlet {
@@ -26,10 +27,10 @@ public class SearchServlet extends HttpServlet {
 
         // Đặt số sản phẩm trên một trang
         int count = 9;
-        
+
         // Lấy chỉ mục trang
         String indexPage = request.getParameter("index");
-        
+
         // Khi mới mở chưa chọn index, đặt index mặc định
         if (indexPage == null) {
             indexPage = "1";
@@ -57,6 +58,10 @@ public class SearchServlet extends HttpServlet {
         request.setAttribute("end", endPage);
         request.setAttribute("page", index);
         request.setAttribute("txtSearch", txtSearch);
+
+        HttpSession session = request.getSession();
+        session.setAttribute("url", "/search?index=" + index + "&s=" + txtSearch);
+
         request.getRequestDispatcher("/View/Customer/search-result.jsp").forward(request, response);
     }
 

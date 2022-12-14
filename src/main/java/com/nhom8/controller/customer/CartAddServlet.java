@@ -42,6 +42,8 @@ public class CartAddServlet extends HttpServlet {
         HttpSession session = request.getSession();
 
         if (session != null && session.getAttribute("account") != null) {
+            String url = (String)session.getAttribute("url");
+            
             int productid = Integer.parseInt(request.getParameter("id"));//
             Product product = dao3.getProductByID(productid);
             
@@ -72,7 +74,7 @@ public class CartAddServlet extends HttpServlet {
                 dao2.insert(ci);
                 cartItem = dao2.getCartItemByCart(cart.getId());
                 session.setAttribute("list-cart", cartItem);
-                response.sendRedirect(request.getContextPath() + "/productdetail?id=" + request.getParameter("id"));
+                response.sendRedirect(request.getContextPath() + url);
             } else {
                 boolean exist = false;
                 for (CartItem ci : cartItem) {
@@ -82,7 +84,7 @@ public class CartAddServlet extends HttpServlet {
                         ci.setCart(cart);
                         ci.setProduct(product);
                         dao2.update(ci);
-                        response.sendRedirect(request.getContextPath() + "/productdetail?id=" + request.getParameter("id"));
+                        response.sendRedirect(request.getContextPath() + url);
                         return;
                     }
                 }
@@ -92,7 +94,7 @@ public class CartAddServlet extends HttpServlet {
                     ci.setCart(cart);
                     ci.setProduct(product);
                     dao2.insert(ci);
-                    response.sendRedirect(request.getContextPath() + "/productdetail?id=" + request.getParameter("id"));
+                    response.sendRedirect(request.getContextPath() + url);
                 }
             }
         } else {
