@@ -14,7 +14,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Product")
 @NamedQuery(name = "Product.findAll", query = "SELECT p FROM Product p")
-@NamedQuery(name = "Product.findActive", query = "SELECT p FROM Product p WHERE p.status = 1")
+@NamedQuery(name = "Product.findActive", query = "SELECT p FROM Product p WHERE p.status = 1 AND p.category.status = 1")
 public class Product implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -129,20 +129,6 @@ public class Product implements Serializable {
 
     public void setOrderitems(List<OrderItem> orderitems) {
         this.orderitems = orderitems;
-    }
-
-    public OrderItem addOrderItem(OrderItem orderitem) {
-        getOrderitems().add(orderitem);
-        orderitem.setProduct(this);
-
-        return orderitem;
-    }
-
-    public OrderItem removeOrderItem(OrderItem orderitem) {
-        getOrderitems().remove(orderitem);
-        orderitem.setProduct(null);
-
-        return orderitem;
     }
 
     public List<CartItem> getCartitems() {

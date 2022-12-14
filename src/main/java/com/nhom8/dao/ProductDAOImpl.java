@@ -80,19 +80,6 @@ public class ProductDAOImpl implements ProductDAO {
         return product;
     }
 
-//    public static void main(String[] args) {
-//        EntityManager em = DBUtil.getEmFactory().createEntityManager();
-//        EntityTransaction trans = em.getTransaction();
-//
-//        //trans.begin();
-//        //Product p = em.find(Product.class, "DC010");
-//        //System.out.println(p.getName());
-//        ProductDAOImpl dao = new ProductDAOImpl();
-//        for(Product p: dao.getProductsByCategory(4)){
-//            System.out.println(p.getName());
-//        }
-//    }
-
     public static void main(String[] args) {
         ProductDAOImpl dao = new ProductDAOImpl();
         int p ;
@@ -128,13 +115,7 @@ public class ProductDAOImpl implements ProductDAO {
 
         try {
             Product p = em.find(Product.class, id);
-            //if(p != null){
             em.remove(p);
-            //}
-            //else{
-            //    throw new Exception("Không tìm thấy!");
-            //}
-
             trans.commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -168,7 +149,7 @@ public class ProductDAOImpl implements ProductDAO {
         EntityManager em = DBUtil.getEmFactory().createEntityManager(); //trả về đối tượng EM
         // createQuery khi dùng câu lệnh thẳng, createNamedQuery khi dùng câu lệnh đã đặt tên bên entity
         //Query q = em.createQuery("SELECT COUNT(p) FROM Product p"); // trả về kết quả dưới dạng đối tượng của class
-        TypedQuery<Number> q = em.createQuery("SELECT COUNT(p) FROM Product p", Number.class); // trả về kết quả dưới dạng đối tượng của class
+        TypedQuery<Number> q = em.createQuery("SELECT COUNT(p) FROM Product p WHERE p.status = 1 AND p.category.status = 1", Number.class); // trả về kết quả dưới dạng đối tượng của class
 
         int total;
         try {
@@ -183,7 +164,7 @@ public class ProductDAOImpl implements ProductDAO {
     public List<Product> pagingProducts(int index, int count) {
         EntityManager em = DBUtil.getEmFactory().createEntityManager(); //trả về đối tượng EM
         // createQuery khi dùng câu lệnh thẳng, createNamedQuery khi dùng câu lệnh đã đặt tên bên entity
-        TypedQuery<Product> q = em.createQuery("SELECT p FROM Product p WHERE p.status = 1 ORDER BY p.id", Product.class); // trả về kết quả dưới dạng đối tượng của class
+        TypedQuery<Product> q = em.createQuery("SELECT p FROM Product p WHERE p.status = 1 AND p.category.status = 1 ORDER BY p.id", Product.class); // trả về kết quả dưới dạng đối tượng của class
         // Không dùng câu lệnh OFFSET FETCH
         // Hoặc createNativeQuery dùng LIMIT OFFSET
         List<Product> product;
@@ -202,7 +183,7 @@ public class ProductDAOImpl implements ProductDAO {
     public List<Product> searchProducts(String name, int index, int count) {
         EntityManager em = DBUtil.getEmFactory().createEntityManager(); //trả về đối tượng EM
         // createQuery khi dùng câu lệnh thẳng, createNamedQuery khi dùng câu lệnh đã đặt tên bên entity
-        TypedQuery<Product> q = em.createQuery("SELECT p FROM Product p WHERE p.name LIKE :name", Product.class); // trả về kết quả dưới dạng đối tượng của class
+        TypedQuery<Product> q = em.createQuery("SELECT p FROM Product p WHERE p.name LIKE :name AND p.status = 1 AND p.category.status = 1", Product.class); // trả về kết quả dưới dạng đối tượng của class
         // Không dùng câu lệnh OFFSET FETCH
         // Hoặc createNativeQuery dùng LIMIT OFFSET
         q.setParameter("name", "%" + name + "%"); // Truyền tham số
@@ -223,7 +204,7 @@ public class ProductDAOImpl implements ProductDAO {
         EntityManager em = DBUtil.getEmFactory().createEntityManager(); //trả về đối tượng EM
         // createQuery khi dùng câu lệnh thẳng, createNamedQuery khi dùng câu lệnh đã đặt tên bên entity
         //Query q = em.createQuery("SELECT COUNT(p) FROM Product p"); // trả về kết quả dưới dạng đối tượng của class
-        TypedQuery<Number> q = em.createQuery("SELECT COUNT(p) FROM Product p WHERE p.name LIKE :name", Number.class); // trả về kết quả dưới dạng đối tượng của class
+        TypedQuery<Number> q = em.createQuery("SELECT COUNT(p) FROM Product p WHERE p.name LIKE :name AND p.status = 1 AND p.category.status = 1", Number.class); // trả về kết quả dưới dạng đối tượng của class
 
         q.setParameter("name", "%" + name + "%"); // Truyền tham số
 
