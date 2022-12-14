@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/fmt" prefix = "fmt" %>
 <!DOCTYPE html>
 <html lang="en">
     <!-- Page Loader -->
@@ -73,7 +74,7 @@
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <span>Đơn hàng</span>
+                                        <span>Chi tiết đơn hàng</span>
                                     </a>
                                 </li>
                             </ol>
@@ -107,13 +108,16 @@
                                                     <th  class="text-center" scope="row">${oi.id}</th>
                                                     <td class="text-center">${oi.product.name}</td>
                                                     <td class="text-center"><img height="100" width="100" src="<c:url value="${oi.product.image}"/>"/></td>
-                                                    <td class="text-center">${oi.price}</td>
+                                                    <td class="text-center">
+                                                        <fmt:setLocale value = "vi_VN"/>
+                                                        <fmt:formatNumber value = "${oi.price}" type = "currency"/>
+                                                    </td>
                                                     <td class="text-center">${oi.amount}</td>
                                                 </tr>
                                             </c:forEach>
                                         </tbody>
                                     </table>
-                                    <a href="<c:url value="/myorders}"/>" " class="btn btn-success right" style="font-size: 14px; background-color: #403e3e; border-radius: 1.25pc; border-color: #403e3e; margin-bottom: 15px; float: right ">Quay lại</a>
+                                    <a href="<c:url value="/myorders"/>" " class="btn btn-success right" style="font-size: 14px; background-color: #403e3e; border-radius: 1.25pc; border-color: #403e3e; margin-bottom: 15px; float: right ">Quay lại</a>
                                 </div>
                             </div>
                         </div>

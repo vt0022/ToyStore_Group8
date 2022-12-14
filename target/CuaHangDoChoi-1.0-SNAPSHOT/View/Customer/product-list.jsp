@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/fmt" prefix = "fmt" %>
 <!DOCTYPE html>
 <html lang="en">
     <!-- Page Loader -->
@@ -154,7 +155,10 @@
                                                                             </div>
                                                                             <div class="product-group-price">
                                                                                 <div class="product-price-and-shipping">
-                                                                                    <span class="price">${pro.price}đ</span>
+                                                                                    <span class="price">
+                                                                                        <fmt:setLocale value = "vi_VN"/>
+                                                                                        <fmt:formatNumber value = "${pro.price}" type = "currency"/>
+                                                                                    </span>
                                                                                 </div>
                                                                             </div>
                                                                         </div>

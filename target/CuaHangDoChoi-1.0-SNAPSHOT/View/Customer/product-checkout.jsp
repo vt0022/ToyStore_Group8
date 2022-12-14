@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/fmt" prefix = "fmt" %>
 <!DOCTYPE html>
 <html lang="en">
     <!-- Page Loader -->
@@ -174,7 +175,10 @@
                                                         <span class="label js-subtotal">
                                                             Tổng tiền các sản phẩm: 
                                                         </span>
-                                                        <span class="value">${total} VNĐ</span>
+                                                        <span class="value">
+                                                            <fmt:setLocale value = "vi_VN"/>
+                                                            <fmt:formatNumber value = "${total}" type = "currency"/>
+                                                        </span>
                                                     </div>
                                                     <div class="cart-summary-line" id="cart-subtotal-shipping">
                                                         <span class="label">
@@ -187,7 +191,10 @@
                                                     </div>
                                                     <div class="cart-summary-line cart-total">
                                                         <span class="label">Tổng cộng: </span>
-                                                        <span class="value">${total} VNĐ (đã bao gồm thuế)</span>
+                                                        <span class="value">
+                                                            <fmt:setLocale value = "vi_VN"/>
+                                                            <fmt:formatNumber value = "${total}" type = "currency"/> (đã bao gồm thuế)
+                                                        </span>
                                                     </div>
                                                 </div>
                                             </div>

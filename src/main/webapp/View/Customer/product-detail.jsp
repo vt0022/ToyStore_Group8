@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/fmt" prefix = "fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en">
     <!-- Page Loader -->
@@ -202,7 +203,10 @@
                                                     <div class="product-info col-xs-12 col-md-7 col-sm-7">
                                                         <div class="detail-description">
                                                             <div class="price-del">
-                                                                <span class="price">${detail.price} Đ</span>
+                                                                <span class="price">
+                                                                    <fmt:setLocale value = "vi_VN"/>
+                                                                    <fmt:formatNumber value = "${detail.price}" type = "currency"/>
+                                                                </span>
                                                             </div>
                                                             <p class="description">${detail.description}</p>
                                                             <div class="has-border cart-area">

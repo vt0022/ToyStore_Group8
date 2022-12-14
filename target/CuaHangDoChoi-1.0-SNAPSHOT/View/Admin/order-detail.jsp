@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/fmt" prefix = "fmt" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <c:url value="/View/Admin" var="url"></c:url>
     <!DOCTYPE html>
@@ -67,7 +68,10 @@
                                                         <td class="text-center">${oi.order.id}</td>
                                                         <td class="text-center">${oi.product.name}</td>
                                                         <td class="text-center"><img height="100" width="100" src="<c:url value="${oi.product.image}"/>"/></td>
-                                                        <td class="text-center">${oi.price}</td>
+                                                        <td class="text-center">
+                                                            <fmt:setLocale value = "vi_VN"/>
+                                                            <fmt:formatNumber value = "${oi.price}" type = "currency"/>
+                                                        </td>
                                                         <td class="text-center">${oi.amount}</td>
                                                     </tr>
                                                 </c:forEach>

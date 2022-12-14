@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/fmt" prefix = "fmt" %>
 <!DOCTYPE html>
 <html lang="en">
     <!-- Page Loader -->
@@ -103,15 +104,20 @@
                                             <c:forEach items="${order}" var="o">
                                                 <tr>
                                                     <th  class="text-center" scope="row">${o.id}</th>
-                                                    <td class="text-center">${o.dateOrder}</td>
-                                                    <td class="text-center">${o.total}</td>
+                                                    <td class="text-center">
+                                                        <fmt:formatDate pattern = "dd/MM/yyyy HH:mm:ss" value = "${o.dateOrder}"/>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <fmt:setLocale value = "vi_VN"/>
+                                                        <fmt:formatNumber value = "${o.total}" type = "currency"/>
+                                                    </td>
                                                     <td class="text-center">${o.name}</td>
                                                     <td class="text-center">${o.email}</td>
                                                     <td class="text-center">${o.phone}</td>
                                                     <td class="text-center">${o.address}</td>
                                                     <td class="text-center">
                                                         <a href="<c:url value="/orderdetail?id=${o.id}"/>" class="btn btn-success" style="font-size: 14px; background-color: #403e3e; border-radius: 1.25pc; border-color: #403e3e">Chi tiết</a>
-                                            </button></a>
+                                                        </button></a>
                                                     </td>
                                                 </tr>
                                             </c:forEach>

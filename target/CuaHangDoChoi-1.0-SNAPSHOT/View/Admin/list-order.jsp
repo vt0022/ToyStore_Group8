@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/fmt" prefix = "fmt" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <c:url value="/View/Admin" var="url"></c:url>
     <!DOCTYPE html>
@@ -49,7 +50,7 @@
                                     <p class="text-success text-center">${message}</p>
                                 <div class="panel-body">
                                     <div class="table-responsive">
-                                        <table class="table table-striped table-bordered table-hover text-center"
+                                        <table class="table table-striped table-bordered table-hover"
                                                id="dataTables-example">
                                             <thead>
                                                 <tr>
@@ -67,8 +68,13 @@
                                                 <c:forEach items="${orderlist}" var="order">
                                                     <tr class="odd gradeX">
                                                         <td class="text-center">${order.id}</td>
-                                                        <td class="text-center">${order.dateOrder}</td>
-                                                        <td class="text-center">${order.total}</td>
+                                                        <td class="text-center">
+                                                            <fmt:formatDate pattern = "dd/MM/yyyy HH:mm:ss" value = "${order.dateOrder}"/>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <fmt:setLocale value = "vi_VN"/>
+                                                            <fmt:formatNumber value = "${order.total}" type = "currency"/>
+                                                        </td>
                                                         <td class="text-center">${order.name}</td>
                                                         <td class="text-center">${order.email}</td>
                                                         <td class="text-center">${order.phone}</td>
@@ -80,9 +86,12 @@
                                                         </td>
                                                     </tr>
                                                 </c:forEach>
-
                                             </tbody>
                                         </table>
+                                        <form action="${pageContext.request.contextPath}/admin/order/manage" method="post">
+                                            <button type="submit" style="margin-bottom: 15px">Quay lại</button>
+                                            <br>
+                                        </form>
                                     </div>
 
                                 </div>
@@ -109,9 +118,9 @@
         <script src="${url}/js/dataTables/jquery.dataTables.js"></script>
         <script src="${url}/js/dataTables/dataTables.bootstrap.js"></script>
         <script>
-                                               $(document).ready(function () {
-                                                   $('#dataTables-example').dataTable();
-                                               });
+            $(document).ready(function () {
+                $('#dataTables-example').dataTable();
+            });
         </script>
         <!-- CUSTOM SCRIPTS -->
         <script src="${url}/js/custom.js"></script>

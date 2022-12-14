@@ -41,7 +41,7 @@
                     <!-- logo -->
                     <div class="col-sm-2 col-md-2 d-flex align-items-center">
                         <div id="logo">
-                            <a href="index.jsp">
+                            <a href="<c:url value="/View/Customer/index.jsp"/>">
                                 <img src="<c:url value="/View/Customer/img/home/homelogo.png"/>" alt="logo" class="img-fluid">
                             </a>
                         </div>
