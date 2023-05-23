@@ -156,7 +156,7 @@
                                                                                 <div class="product-price-and-shipping">
                                                                                     <span class="price">
                                                                                         <fmt:setLocale value = "vi_VN"/>
-                                                                                        <fmt:formatNumber value = "$${pro.price}" type = "currency"/>
+                                                                                        <fmt:formatNumber value = "${pro.price}" type = "currency"/>
                                                                                     </span>
                                                                                 </div>
                                                                             </div>
@@ -206,7 +206,7 @@
                                                                 </c:forEach>
                                                                 <c:if test="${page != end}">
                                                                     <li>
-                                                                        <a rel="next" href="categorylist?index=${page+1}&categoryid=${catid}"}" class="next disabled js-search-link"> <!-- Kích hoạt hoặc vô hiệu nút Trước -->
+                                                                        <a rel="next" href="categorylist?index=${page+1}&categoryid=${catid}" class="next disabled js-search-link"> <!-- Kích hoạt hoặc vô hiệu nút Trước -->
                                                                             Sau
                                                                         </a>
                                                                     </li>
